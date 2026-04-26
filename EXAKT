@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UL-Pilotenausbildung am Bodensee | Konair GmbH</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #102033;
+      background: #f5f8fb;
+      line-height: 1.55;
+    }
+    .topbar {
+      background: #0b1f35;
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(120deg, #0b1f35 0%, #174c7c 65%, #2d8fd5 100%);
+      color: white;
+      padding: 80px 24px;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    h1 {
+      font-size: 52px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+    h2 {
+      font-size: 34px;
+      margin: 0 0 18px;
+      color: #0b1f35;
+    }
+    h3 {
+      margin-top: 0;
+      color: #0b1f35;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 680px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .cta-row {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffb703;
+      color: #0b1f35;
+      padding: 15px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+    .btn.secondary {
+      background: white;
+      color: #0b1f35;
+    }
+    .price-card {
+      background: white;
+      color: #0b1f35;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.22);
+    }
+    .price {
+      font-size: 44px;
+      font-weight: 900;
+      margin: 10px 0;
+    }
+    .muted { color: #607086; }
+    section {
+      padding: 70px 24px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(20,40,70,0.08);
+      border: 1px solid #e7edf5;
+    }
+    ul {
+      padding-left: 22px;
+      margin-bottom: 0;
+    }
+    li { margin-bottom: 8px; }
+    .highlight {
+      background: #fff8df;
+      border-left: 6px solid #ffb703;
+      padding: 22px;
+      border-radius: 16px;
+      margin-top: 24px;
+    }
+    .steps {
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      padding-left: 58px;
+      margin-bottom: 24px;
+    }
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      background: #174c7c;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 38px;
+      font-weight: 800;
+    }
+    .form-box {
+      background: #0b1f35;
+      color: white;
+      border-radius: 24px;
+      padding: 34px;
+    }
+    .form-box h2 { color: white; }
+    input, textarea, select {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    textarea { min-height: 110px; }
+    .small {
+      font-size: 13px;
+      color: #d2d9e5;
+    }
+    .footer {
+      background: #071522;
+      color: white;
+      padding: 30px 24px;
+      text-align: center;
+    }
+    @media (max-width: 850px) {
+      .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      h1 { font-size: 38px; }
+      .topbar { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">KONAIR</div>
+    <nav>
+      <a href="#paket">Paket</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Anfragen</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">UL-Pilotenausbildung am Bodensee</div>
+        <h1>Werde Pilot. Starte deine UL-Ausbildung bei Konair.</h1>
+        <p>Unsere Pilotenausbildung verbindet professionelle Betreuung, moderne UL-Ausbildung und ein klares Komplettpaket – transparent, planbar und mit persönlicher Begleitung bis zur Prüfung.</p>
+        <div class="cta-row">
+          <a class="btn" href="#kontakt">Kostenloses Erstgespräch anfragen</a>
+          <a class="btn secondary" href="#paket">Paket ansehen</a>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="muted">Komplettpaket Pilotenausbildung</div>
+        <div class="price">11.000 €</div>
+        <p><strong>inkl. MwSt.</strong></p>
+        <ul>
+          <li>35 Flugstunden inklusive</li>
+          <li>Fluglehrer inklusive</li>
+          <li>Treibstoff inklusive</li>
+          <li>Theorie & Prüfungsvorbereitung</li>
+          <li>Lernmaterial, Anmeldung & einmalige Prüfungsgebühren</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Warum Konair?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Klare Kosten</h3>
+          <p>Statt unübersichtlicher Einzelpreise erhältst du ein transparentes Ausbildungspaket mit klar definierten Leistungen.</p>
+        </div>
+        <div class="card">
+          <h3>Persönliche Ausbildung</h3>
+          <p>Du lernst Schritt für Schritt mit erfahrenen Fluglehrern – praxisnah, strukturiert und auf deinen Fortschritt abgestimmt.</p>
+        </div>
+        <div class="card">
+          <h3>Fliegen am Bodensee</h3>
+          <p>Konstanz bietet ein attraktives Umfeld für deine Ausbildung: schöne Region, motivierendes Erlebnis und hochwertige Flugpraxis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="paket" style="background:white;">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Das ist im 11.000 € Paket enthalten</h2>
+        <ul>
+          <li>Theoretische Ausbildung inklusive Unterricht</li>
+          <li>Prüfungsvorbereitung</li>
+          <li>Lernmaterialien</li>
+          <li>Anmeldegebühren</li>
+          <li>Einmalige Prüfungsgebühren</li>
+          <li>35 Flugstunden praktische Ausbildung</li>
+          <li>Flugzeugnutzung</li>
+          <li>Fluglehrer</li>
+          <li>Treibstoff</li>
+        </ul>
+        <div class="highlight">
+          <strong>Wichtig:</strong> Solltest du mehr als 35 Flugstunden benötigen, werden zusätzliche Flugstunden mit 225 € pro Stunde berechnet.
+        </div>
+      </div>
+      <div class="card">
+        <h3>Zahlungsplan</h3>
+        <p><strong>5.000 €</strong> bei Vertragsabschluss</p>
+        <p><strong>6.000 €</strong> in 2 Raten vor dem ersten Soloflug</p>
+        <hr />
+        <p><strong>Gültigkeit:</strong> 18 Monate ab Vertragsabschluss</p>
+        <p class="muted">So bleibt deine Ausbildung planbar und du hast einen klaren Rahmen für deinen Weg zur Lizenz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="wrap grid-2">
+      <div>
+        <h2>So läuft deine Ausbildung ab</h2>
+        <div class="steps">
+          <div class="step"><strong>Erstgespräch</strong><br/>Wir klären deine Ziele, Voraussetzungen und den passenden Starttermin.</div>
+          <div class="step"><strong>Theorie & Vorbereitung</strong><br/>Du lernst die Grundlagen und bereitest dich strukturiert auf die Prüfung vor.</div>
+          <div class="step"><strong>Praktische Flugausbildung</strong><br/>Du trainierst mit Fluglehrer Schritt für Schritt bis zur sicheren Beherrschung des Flugzeugs.</div>
+          <div class="step"><strong>Prüfung & Lizenz</strong><br/>Nach erfolgreicher Ausbildung gehst du vorbereitet in die Prüfung.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Für wen ist die Ausbildung geeignet?</h3>
+        <p>Für alle, die den Traum vom Fliegen verwirklichen möchten – egal ob als Hobby, Einstieg in die Luftfahrt oder persönliches Lebensziel.</p>
+        <ul>
+          <li>Du möchtest selbst Pilot werden</li>
+          <li>Du suchst klare Kosten statt versteckter Überraschungen</li>
+          <li>Du willst persönliche Betreuung statt Massenabfertigung</li>
+          <li>Du möchtest in einer attraktiven Region fliegen lernen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#eaf2fa;">
+    <div class="wrap">
+      <h2>Häufige Fragen</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Wie lange dauert die Ausbildung?</h3>
+          <p>In der Regel 6 bis 12 Monate. Die tatsächliche Dauer hängt von Wetter, Verfügbarkeit und individuellem Fortschritt ab.</p>
+        </div>
+        <div class="card">
+          <h3>Sind 35 Stunden immer ausreichend?</h3>
+          <p>35 Stunden sind im Paket enthalten. Je nach Lernfortschritt können zusätzliche Stunden erforderlich sein.</p>
+        </div>
+        <div class="card">
+          <h3>Was passiert bei schlechtem Wetter?</h3>
+          <p>Flugtermine können aus Sicherheitsgründen verschoben werden. Sicherheit hat immer Vorrang.</p>
+        </div>
+        <div class="card">
+          <h3>Gibt es eine Rückerstattung bei Abbruch?</h3>
+          <p>Bei Abbruch erfolgt keine Rückerstattung bereits gezahlter Beträge. Details werden im Ausbildungsvertrag geregelt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Bereit für deinen Start?</h2>
+        <p>Frag jetzt dein kostenloses Erstgespräch an. Wir erklären dir den Ablauf, prüfen deine Fragen und zeigen dir, wie du mit deiner UL-Ausbildung starten kannst.</p>
+        <div class="highlight">
+          <strong>Tipp:</strong> Du kannst auch zuerst einen Schnupperflug buchen und danach entscheiden, ob du mit der Ausbildung startest.
+        </div>
+      </div>
+      <div class="form-box">
+        <h2>Anfrage senden</h2>
+        <form>
+          <label>Name</label>
+          <input type="text" placeholder="Dein Name" />
+          <label>E-Mail</label>
+          <input type="email" placeholder="deine@email.de" />
+          <label>Telefon</label>
+          <input type="tel" placeholder="Telefonnummer" />
+          <label>Interesse</label>
+          <select>
+            <option>UL-Ausbildung 11.000 € Paket</option>
+            <option>Schnupperflug</option>
+            <option>Erstgespräch</option>
+          </select>
+          <label>Nachricht</label>
+          <textarea placeholder="Ich interessiere mich für die UL-Ausbildung..."></textarea>
+          <a class="btn" href="mailto:info@konair.de?subject=Anfrage UL-Ausbildung">Anfrage per E-Mail senden</a>
+          <p class="small">Hinweis: Dieses Formular ist als Landingpage-Vorlage gedacht. Für echte Formularübermittlung muss es technisch mit E-Mail, CRM oder Website-System verbunden werden.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>Konair GmbH</strong> · Riedstrasse 82 · 78467 Konstanz</p>
+    <p>UL-Pilotenausbildung am Bodensee</p>
+  </footer>
+</body>
+</html>
