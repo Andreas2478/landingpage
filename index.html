@@ -1,190 +1,583 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>UL-Ausbildung (SPL) | Konair</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UL-Ausbildung am Bodensee | KONAIR</title>
 
 <style>
-body {
+* {
+box-sizing: border-box;
 margin: 0;
-font-family: Arial, sans-serif;
-background: #f5f7fb;
-color: #1a1a1a;
+padding: 0;
 }
 
-header {
-background: white;
-padding: 20px;
-text-align: center;
-border-bottom: 1px solid #ddd;
+body {
+font-family: Arial, Helvetica, sans-serif;
+color: #102033;
+background: #f5f8fb;
+line-height: 1.6;
 }
 
-header img {
-max-width: 220px;
+a {
+text-decoration: none;
+}
+
+.topbar {
+background: #ffffff;
+padding: 18px 8%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+.logo {
+font-size: 26px;
+font-weight: 800;
+color: #006fd6;
+}
+
+.logo span {
+color: #ff6a00;
+}
+
+.nav a {
+color: #102033;
+margin-left: 22px;
+font-weight: 600;
+font-size: 15px;
 }
 
 .hero {
-background: linear-gradient(135deg,#2d7df6,#4ea1ff);
+min-height: 82vh;
+background: linear-gradient(135deg, rgba(0,111,214,0.95), rgba(0,38,82,0.92)),
+url("logo.png");
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center 70px;
 color: white;
-text-align: center;
-padding: 80px 20px;
+display: flex;
+align-items: center;
+padding: 90px 8%;
 }
 
-.hero h1 {
-font-size: 36px;
-margin-bottom: 10px;
+.hero-content {
+max-width: 760px;
+margin-top: 120px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.16);
+border: 1px solid rgba(255,255,255,0.3);
+padding: 8px 16px;
+border-radius: 999px;
+font-weight: 700;
+margin-bottom: 24px;
+}
+
+h1 {
+font-size: clamp(38px, 6vw, 72px);
+line-height: 1.05;
+margin-bottom: 24px;
+letter-spacing: -1.5px;
 }
 
 .hero p {
-font-size: 18px;
-margin-bottom: 20px;
+font-size: 21px;
+max-width: 650px;
+margin-bottom: 34px;
+color: #eaf5ff;
 }
 
-.btn {
+.cta-row {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.btn-primary {
 background: #ff6a00;
 color: white;
-padding: 14px 28px;
-border-radius: 8px;
-text-decoration: none;
-font-weight: bold;
+padding: 16px 28px;
+border-radius: 10px;
+font-weight: 800;
+box-shadow: 0 10px 25px rgba(255,106,0,0.35);
 display: inline-block;
 }
 
-.countdown {
-margin-top: 20px;
+.btn-secondary {
+color: white;
+padding: 15px 26px;
+border-radius: 10px;
+font-weight: 800;
+border: 2px solid rgba(255,255,255,0.55);
+display: inline-block;
+}
+
+.trust {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 18px;
+padding: 34px 8%;
+background: white;
+margin-top: -40px;
+position: relative;
+z-index: 2;
+max-width: 1150px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 18px;
+box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.trust-card {
+text-align: center;
+padding: 12px;
+}
+
+.trust-card strong {
+display: block;
+font-size: 26px;
+color: #006fd6;
+margin-bottom: 4px;
+}
+
+section {
+padding: 85px 8%;
+}
+
+.section-title {
+text-align: center;
+max-width: 780px;
+margin: 0 auto 50px;
+}
+
+.section-title h2 {
+font-size: clamp(32px, 4vw, 48px);
+margin-bottom: 14px;
+color: #102033;
+}
+
+.section-title p {
+font-size: 18px;
+color: #5a6a7b;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+max-width: 1150px;
+margin: auto;
+}
+
+.card {
+background: white;
+padding: 34px;
+border-radius: 18px;
+box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+border: 1px solid #e6edf5;
+}
+
+.card .icon {
+width: 52px;
+height: 52px;
+border-radius: 14px;
+background: #e8f3ff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+.card h3 {
+font-size: 23px;
+margin-bottom: 12px;
+}
+
+.highlight {
+background: linear-gradient(135deg, #002652, #006fd6);
+color: white;
+}
+
+.highlight .section-title h2,
+.highlight .section-title p {
+color: white;
+}
+
+.steps {
+max-width: 950px;
+margin: auto;
+display: grid;
+gap: 18px;
+}
+
+.step {
+background: rgba(255,255,255,0.12);
+border: 1px solid rgba(255,255,255,0.22);
+border-radius: 16px;
+padding: 26px;
+display: grid;
+grid-template-columns: 70px 1fr;
+gap: 18px;
+align-items: center;
+}
+
+.step-number {
+width: 54px;
+height: 54px;
+border-radius: 50%;
+background: #ff6a00;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 900;
+font-size: 22px;
+}
+
+.pricing {
+background: #ffffff;
+}
+
+.offer-box {
+max-width: 920px;
+margin: auto;
+background: #f5f8fb;
+border-radius: 22px;
+padding: 44px;
+box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+border: 1px solid #e6edf5;
+text-align: center;
+}
+
+.offer-box h2 {
+font-size: 42px;
+margin-bottom: 14px;
+}
+
+.offer-box p {
+font-size: 18px;
+color: #5a6a7b;
+margin-bottom: 26px;
+}
+
+.features {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 14px;
+margin: 28px auto;
+max-width: 700px;
+text-align: left;
+}
+
+.feature {
+background: white;
+padding: 16px;
+border-radius: 12px;
+font-weight: 700;
+}
+
+.feature::before {
+content: "✓ ";
+color: #00a85a;
+font-weight: 900;
+}
+
+.faq {
+max-width: 900px;
+margin: auto;
+}
+
+details {
+background: white;
+margin-bottom: 14px;
+border-radius: 14px;
+padding: 20px 24px;
+box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+border: 1px solid #e6edf5;
+}
+
+summary {
+cursor: pointer;
+font-weight: 800;
 font-size: 18px;
 }
 
-.section {
-padding: 60px 20px;
+details p {
+margin-top: 12px;
+color: #5a6a7b;
+}
+
+.final-cta {
+background: linear-gradient(135deg, #ff6a00, #ff8c2a);
 text-align: center;
+color: white;
+padding: 80px 8%;
 }
 
-.box-grid {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-margin-top: 30px;
+.final-cta h2 {
+font-size: clamp(32px, 5vw, 54px);
+margin-bottom: 14px;
 }
 
-.box {
+.final-cta p {
+font-size: 20px;
+margin-bottom: 28px;
+}
+
+.final-cta .btn-primary {
 background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-min-width: 200px;
+color: #ff6a00;
+box-shadow: none;
 }
 
 footer {
-background: #111;
-color: white;
+background: #071421;
+color: #b9c6d3;
+padding: 32px 8%;
 text-align: center;
-padding: 20px;
+font-size: 14px;
 }
 
-.whatsapp {
+.floating-contact {
 position: fixed;
-bottom: 20px;
-right: 20px;
-background: #25D366;
+right: 22px;
+bottom: 22px;
+width: 62px;
+height: 62px;
+background: #00b050;
 color: white;
-padding: 14px;
 border-radius: 50%;
-text-decoration: none;
-font-size: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+z-index: 20;
+}
+
+@media (max-width: 850px) {
+.nav {
+display: none;
+}
+
+.trust,
+.cards,
+.features {
+grid-template-columns: 1fr;
+}
+
+.hero {
+padding-top: 70px;
+min-height: auto;
+}
+
+.hero-content {
+margin-top: 80px;
+}
+
+.step {
+grid-template-columns: 1fr;
+}
+
+.offer-box {
+padding: 30px 22px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="logo.png" alt="Konair Logo">
+<header class="topbar">
+<div class="logo">KONAIR<span>.aero</span></div>
+<nav class="nav">
+<a href="#vorteile">Vorteile</a>
+<a href="#ablauf">Ablauf</a>
+<a href="#angebot">Ausbildung</a>
+<a href="#faq">FAQ</a>
+</nav>
 </header>
 
 <section class="hero">
-<h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
-<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze</p>
+<div class="hero-content">
+<div class="badge">UL-Ausbildung am Bodensee · begrenzte Plätze</div>
+<h1>Werde Pilot. Starte deine UL-Ausbildung mit KONAIR.</h1>
+<p>
+Professionelle Flugausbildung, persönliche Betreuung und ein klarer Weg
+zu deiner Lizenz – direkt am Bodensee.
+</p>
 
-<a href="#kontakt" class="btn">Jetzt Platz sichern</a>
-
-<div class="countdown" id="countdown"></div>
-</section>
-
-<section class="section">
-<h2>Ausbildungsstart</h2>
-<div class="box">Start: 18.05.2026</div>
-</section>
-
-<section class="section">
-<h2>Dein Komplettpaket</h2>
-
-<div class="box-grid">
-<div class="box">11.000 € Komplettpaket</div>
-<div class="box">Zahlungsplan möglich</div>
-<div class="box">18 Monate gültig</div>
-<div class="box">Zusatzstunden 225 €</div>
-<div class="box">Schnupperflug möglich</div>
+<div class="cta-row">
+<a class="btn-primary" href="mailto:info@konair.aero?subject=Anfrage UL-Ausbildung">Jetzt Platz sichern</a>
+<a class="btn-secondary" href="#ablauf">Mehr erfahren</a>
+</div>
 </div>
 </section>
 
-<section class="section">
-<h2>Warum Konair?</h2>
+<div class="trust">
+<div class="trust-card">
+<strong>1:1</strong>
+Persönliche Betreuung
+</div>
+<div class="trust-card">
+<strong>SPL</strong>
+UL-Pilotenschein
+</div>
+<div class="trust-card">
+<strong>Bodensee</strong>
+Traumhafte Flugregion
+</div>
+<div class="trust-card">
+<strong>2026</strong>
+Neuer Ausbildungsstart
+</div>
+</div>
 
-<div class="box-grid">
-<div class="box">Top Lage am Bodensee</div>
-<div class="box">Erfahrene Fluglehrer</div>
-<div class="box">Moderne Flugzeuge</div>
-<div class="box">Flexible Termine</div>
+<section id="vorteile">
+<div class="section-title">
+<h2>Warum deine Ausbildung bei KONAIR?</h2>
+<p>
+Eine gute Flugschule gibt dir nicht nur Flugstunden – sie gibt dir Sicherheit,
+Struktur und echte Freude am Fliegen.
+</p>
+</div>
+
+<div class="cards">
+<div class="card">
+<div class="icon">✈️</div>
+<h3>Praxisnah lernen</h3>
+<p>Du lernst Schritt für Schritt, sicher und verständlich – mit Fokus auf echtes Können im Cockpit.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Klarer Ausbildungsweg</h3>
+<p>Von der ersten Beratung bis zur Prüfung bekommst du einen transparenten Ablauf ohne Verwirrung.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌊</div>
+<h3>Fliegen am Bodensee</h3>
+<p>Ausbildung in einer der schönsten Regionen – mit einzigartiger Kulisse und echtem Erlebnisfaktor.</p>
+</div>
 </div>
 </section>
 
-<section class="section">
-<h2>Vertrauen & Sicherheit</h2>
+<section class="highlight" id="ablauf">
+<div class="section-title">
+<h2>So läuft deine Ausbildung ab</h2>
+<p>Ein einfacher Weg vom Interessenten zum Piloten.</p>
+</div>
 
-<div class="box-grid">
-<div class="box">✔ Staatlich anerkannt</div>
-<div class="box">✔ Viele Absolventen</div>
-<div class="box">✔ Persönliche Betreuung</div>
-<div class="box">✔ Erfahrung</div>
+<div class="steps">
+<div class="step">
+<div class="step-number">1</div>
+<div>
+<h3>Kostenlose Anfrage senden</h3>
+<p>Du meldest dich unverbindlich und wir klären deine Fragen zur Ausbildung.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<div>
+<h3>Persönliches Beratungsgespräch</h3>
+<p>Wir besprechen Voraussetzungen, Ablauf, Zeitplan und deine Ziele.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<div>
+<h3>Start der Theorie & Praxis</h3>
+<p>Du beginnst mit Theorie, Flugstunden und praktischer Vorbereitung.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<div>
+<h3>Prüfung & Lizenz</h3>
+<p>Nach erfolgreicher Ausbildung machst du deine Prüfung und startest als Pilot durch.</p>
+</div>
+</div>
 </div>
 </section>
 
-<section class="section" id="kontakt">
-<h2>Kontakt</h2>
+<section class="pricing" id="angebot">
+<div class="offer-box">
+<h2>Ausbildungsstart: 18.05.2026</h2>
+<p>
+Sichere dir frühzeitig deinen Platz für die kommende UL-Ausbildung.
+Die Teilnehmerzahl ist begrenzt.
+</p>
 
-<form>
-<input placeholder="Name" required><br><br>
-<input placeholder="Email" required><br><br>
-<textarea placeholder="Nachricht"></textarea><br><br>
-<button class="btn">Absenden</button>
-</form>
+<div class="features">
+<div class="feature">Persönliche Beratung</div>
+<div class="feature">Strukturierter Ausbildungsplan</div>
+<div class="feature">Theorie & Praxis</div>
+<div class="feature">Flugausbildung am Bodensee</div>
+<div class="feature">Professionelle Betreuung</div>
+<div class="feature">Ideal für Einsteiger</div>
+</div>
+
+<a class="btn-primary" href="mailto:andreaspusch78@gmail.com?subject=Anfrage Ausbildungsplatz UL-Ausbildung">
+Ausbildungsplatz anfragen
+</a>
+</div>
+</section>
+
+<section id="faq">
+<div class="section-title">
+<h2>Häufige Fragen</h2>
+<p>Die wichtigsten Antworten für deinen Start in die UL-Ausbildung.</p>
+</div>
+
+<div class="faq">
+<details>
+<summary>Brauche ich Vorkenntnisse?</summary>
+<p>Nein. Die Ausbildung ist auch für Einsteiger geeignet. Alles Wichtige lernst du Schritt für Schritt.</p>
+</details>
+
+<details>
+<summary>Wie kann ich mich anmelden?</summary>
+<p>Klicke auf den Button „Ausbildungsplatz anfragen“ und sende eine kurze Nachricht. Danach melden wir uns bei dir.</p>
+</details>
+
+<details>
+<summary>Wo findet die Ausbildung statt?</summary>
+<p>Die Ausbildung findet im Raum Bodensee statt. Genauere Details erhältst du im persönlichen Gespräch.</p>
+</details>
+
+<details>
+<summary>Ist die Teilnehmerzahl begrenzt?</summary>
+<p>Ja. Damit eine persönliche Betreuung möglich bleibt, sind die Plätze begrenzt.</p>
+</details>
+</div>
+</section>
+
+<section class="final-cta">
+<h2>Bereit für deinen ersten Schritt ins Cockpit?</h2>
+<p>Frag jetzt unverbindlich deinen Platz für die UL-Ausbildung an.</p>
+<a class="btn-primary" href="mailto:andreaspusch78@gmail.com?subject=Ich interessiere mich für die UL-Ausbildung">
+Jetzt unverbindlich anfragen
+</a>
 </section>
 
 <footer>
-Konair GmbH – Flugschule Bodensee
+© 2026 KONAIR.aero · Flugschule / Rundflüge · UL-Ausbildung am Bodensee
 </footer>
 
-<a class="whatsapp" href="https://wa.me/41763730578" target="_blank">💬</a>
-
-<script>
-const target = new Date("May 18, 2026 00:00:00").getTime();
-
-setInterval(() => {
-const now = new Date().getTime();
-const diff = target - now;
-
-const d = Math.floor(diff/(1000*60*60*24));
-const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-const m = Math.floor((diff%(1000*60*60))/(1000*60));
-
-document.getElementById("countdown").innerHTML =
-"Start in: " + d + " Tage " + h + "h " + m + "min";
-},1000);
-</script>
+<a class="floating-contact" href="mailto:andreaspusch78?subject=Anfrage UL-Ausbildung">✉</a>
 
 </body>
 </html>
+
