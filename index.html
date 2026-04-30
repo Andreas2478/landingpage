@@ -4,278 +4,186 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UL Pilotenausbildung (SPL) | Konair</title>
+<title>UL-Ausbildung (SPL) | Konair</title>
 
 <style>
-
-/* RESET */
 body {
-    margin:0;
-    font-family: -apple-system, Arial, sans-serif;
-    background:#f8fafc;
-    color:#1e293b;
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f5f7fb;
+color: #1a1a1a;
 }
 
-/* NAV */
-nav {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+header {
+background: white;
+padding: 20px;
+text-align: center;
+border-bottom: 1px solid #ddd;
 }
 
-nav img {
-    height:55px;
+header img {
+max-width: 220px;
 }
 
-/* HERO */
 .hero {
-    background:linear-gradient(135deg,#2563eb,#60a5fa);
-    color:white;
-    text-align:center;
-    padding:100px 20px;
+background: linear-gradient(135deg,#2d7df6,#4ea1ff);
+color: white;
+text-align: center;
+padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size:42px;
-    margin-bottom:10px;
+font-size: 36px;
+margin-bottom: 10px;
 }
 
 .hero p {
-    font-size:18px;
-    margin-bottom:20px;
+font-size: 18px;
+margin-bottom: 20px;
 }
 
 .btn {
-    background:#ff7a00;
-    border:none;
-    padding:16px 30px;
-    border-radius:10px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.2s;
+background: #ff6a00;
+color: white;
+padding: 14px 28px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+display: inline-block;
 }
 
-.btn:hover {
-    transform:scale(1.05);
-}
-
-/* COUNTDOWN */
 .countdown {
-    margin-top:20px;
-    font-size:20px;
-    font-weight:bold;
+margin-top: 20px;
+font-size: 18px;
 }
 
-/* SECTION */
 .section {
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
+padding: 60px 20px;
+text-align: center;
 }
 
-h2 {
-    text-align:center;
-    margin-bottom:30px;
+.box-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+margin-top: 30px;
 }
 
-/* GRID */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+.box {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+min-width: 200px;
 }
 
-/* CARD */
-.card {
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 12px 25px rgba(0,0,0,0.08);
-    text-align:center;
-    transition:0.2s;
-}
-
-.card:hover {
-    transform:translateY(-5px);
-}
-
-/* HIGHLIGHT */
-.highlight {
-    background:#1e40af;
-    color:white;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-}
-
-/* FORM */
-form {
-    max-width:500px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-input, textarea {
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ddd;
-}
-
-textarea {
-    height:120px;
-}
-
-/* WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:18px;
-    border-radius:50%;
-    font-size:22px;
-    text-decoration:none;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* FOOTER */
 footer {
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
+background: #111;
+color: white;
+text-align: center;
+padding: 20px;
 }
 
+.whatsapp {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #25D366;
+color: white;
+padding: 14px;
+border-radius: 50%;
+text-decoration: none;
+font-size: 20px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
+<header>
 <img src="logo.png" alt="Konair Logo">
-</nav>
+</header>
 
-<!-- HERO -->
 <section class="hero">
 <h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
 <p>Starte deine Ausbildung am Bodensee – begrenzte Plätze</p>
 
-<button class="btn" onclick="scrollToForm()">Jetzt Platz sichern</button>
+<a href="#kontakt" class="btn">Jetzt Platz sichern</a>
 
 <div class="countdown" id="countdown"></div>
 </section>
 
-<!-- START -->
 <section class="section">
 <h2>Ausbildungsstart</h2>
-<div class="card">
-Start: <strong>18.05.2026</strong>
-</div>
+<div class="box">Start: 18.05.2026</div>
 </section>
 
-<!-- PAKET -->
 <section class="section">
 <h2>Dein Komplettpaket</h2>
 
-<div class="grid">
-<div class="card">11.000 € Komplettpaket</div>
-<div class="card">Zahlungsplan möglich</div>
-<div class="card">18 Monate gültig</div>
-<div class="card">Zusatzstunden 225 €</div>
-<div class="card">Schnupperflug möglich</div>
+<div class="box-grid">
+<div class="box">11.000 € Komplettpaket</div>
+<div class="box">Zahlungsplan möglich</div>
+<div class="box">18 Monate gültig</div>
+<div class="box">Zusatzstunden 225 €</div>
+<div class="box">Schnupperflug möglich</div>
 </div>
-
 </section>
 
-<!-- VORTEILE -->
 <section class="section">
 <h2>Warum Konair?</h2>
 
-<div class="grid">
-<div class="card">Top Lage am Bodensee</div>
-<div class="card">Erfahrene Fluglehrer</div>
-<div class="card">Moderne Flugzeuge</div>
-<div class="card">Flexible Termine</div>
+<div class="box-grid">
+<div class="box">Top Lage am Bodensee</div>
+<div class="box">Erfahrene Fluglehrer</div>
+<div class="box">Moderne Flugzeuge</div>
+<div class="box">Flexible Termine</div>
 </div>
-
 </section>
 
-<!-- VERTRAUEN -->
 <section class="section">
 <h2>Vertrauen & Sicherheit</h2>
 
-<div class="grid">
-<div class="card">✔️ Staatlich anerkannt</div>
-<div class="card">✔️ Viele Absolventen</div>
-<div class="card">✔️ Persönliche Betreuung</div>
-<div class="card">✔️ Langjährige Erfahrung</div>
-</div>
-
-</section>
-
-<!-- PREIS -->
-<section class="section">
-<div class="highlight">
-<h2>Preis</h2>
-<h1>11.000 €</h1>
-<p>Komplettpaket ohne versteckte Kosten</p>
+<div class="box-grid">
+<div class="box">✔ Staatlich anerkannt</div>
+<div class="box">✔ Viele Absolventen</div>
+<div class="box">✔ Persönliche Betreuung</div>
+<div class="box">✔ Erfahrung</div>
 </div>
 </section>
 
-<!-- FORM -->
-<section class="section" id="form">
-<h2>Jetzt anfragen</h2>
+<section class="section" id="kontakt">
+<h2>Kontakt</h2>
 
 <form>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="E-Mail">
-<textarea placeholder="Nachricht"></textarea>
+<input placeholder="Name" required><br><br>
+<input placeholder="Email" required><br><br>
+<textarea placeholder="Nachricht"></textarea><br><br>
 <button class="btn">Absenden</button>
 </form>
-
 </section>
 
-<!-- FOOTER -->
 <footer>
 Konair GmbH – Flugschule Bodensee
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/41763730578" target="_blank">
-💬
-</a>
+<a class="whatsapp" href="https://wa.me/41763730578" target="_blank">💬</a>
 
 <script>
-
-// SCROLL
-function scrollToForm() {
-document.getElementById("form").scrollIntoView({behavior:"smooth"});
-}
-
-// COUNTDOWN
 const target = new Date("May 18, 2026 00:00:00").getTime();
 
-setInterval(()=>{
+setInterval(() => {
 const now = new Date().getTime();
 const diff = target - now;
 
 const d = Math.floor(diff/(1000*60*60*24));
-const h = Math.floor((diff/(1000*60*60))%24);
-const m = Math.floor((diff/(1000*60))%60);
+const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const m = Math.floor((diff%(1000*60*60))/(1000*60));
 
 document.getElementById("countdown").innerHTML =
 "Start in: " + d + " Tage " + h + "h " + m + "min";
 },1000);
-
 </script>
 
 </body>
