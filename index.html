@@ -11,148 +11,130 @@
 body {
 margin:0;
 font-family:Arial, sans-serif;
-background:linear-gradient(180deg,#f0f7ff,#ffffff);
+background:#ffffff;
 color:#1a1a1a;
+}
+
+/* NAV */
+nav {
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+border-bottom:1px solid #eee;
+}
+nav img {
+height:50px;
 }
 
 /* HERO */
 .hero {
-position:relative;
+display:flex;
+flex-direction:column;
+align-items:center;
 text-align:center;
-padding:120px 20px;
-background:linear-gradient(135deg,#1e3a8a,#3b82f6,#60a5fa);
-color:white;
-overflow:hidden;
-}
-
-/* LOGO BACKGROUND */
-.hero::before {
-content:"";
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:url('logo.png') no-repeat center;
-background-size:500px;
-opacity:0.08;
-width:100%;
-height:100%;
-}
-
-/* LOGO TOP */
-.logo-top {
-height:70px;
-margin-bottom:20px;
+padding:80px 20px;
+max-width:900px;
+margin:auto;
 }
 
 .hero h1 {
-font-size:46px;
+font-size:42px;
 margin-bottom:10px;
 }
 
 .hero p {
-font-size:20px;
+font-size:18px;
+color:#555;
 margin-bottom:20px;
 }
 
 .btn {
-background:#ff6a00;
+background:#1e3a8a;
 color:white;
-padding:16px 30px;
-border-radius:10px;
+padding:14px 28px;
+border-radius:6px;
 text-decoration:none;
-display:inline-block;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* COUNTDOWN */
 .countdown {
-margin-top:20px;
-font-size:22px;
-font-weight:bold;
+margin-top:15px;
+font-size:18px;
+color:#1e3a8a;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
-max-width:1100px;
+max-width:1000px;
 margin:auto;
-padding:70px 20px;
-text-align:center;
+padding:60px 20px;
 }
 
-h2 {
-margin-bottom:30px;
-color:#0f172a;
+.section h2 {
+margin-bottom:20px;
 }
 
 /* GRID */
 .grid {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* CARD */
-.card {
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
+/* BOX */
+.box {
+border:1px solid #eee;
+padding:20px;
+border-radius:8px;
+background:white;
 }
 
-.card:hover {
-transform:translateY(-8px);
-}
-
-/* HIGHLIGHT */
-.highlight {
-background:linear-gradient(135deg,#1e40af,#3b82f6);
-color:white;
-padding:50px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+/* PRICE */
+.price {
+background:#f4f8fb;
+padding:40px;
+border-radius:10px;
+text-align:center;
 }
 
 /* FORM */
 form {
-max-width:500px;
+max-width:400px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:12px;
+gap:10px;
 }
 
 input, textarea {
-padding:14px;
-border-radius:8px;
+padding:10px;
 border:1px solid #ddd;
+border-radius:5px;
 }
 
-textarea { height:120px; }
+textarea {
+height:100px;
+}
 
 /* WHATSAPP */
 .whatsapp {
 position:fixed;
-bottom:25px;
-right:25px;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
-padding:18px;
+padding:14px;
 border-radius:50%;
-font-size:24px;
 text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
 }
 
 /* FOOTER */
 footer {
-background:#0f172a;
-color:white;
+border-top:1px solid #eee;
 text-align:center;
-padding:25px;
+padding:20px;
+margin-top:40px;
 }
 
 </style>
@@ -160,13 +142,15 @@ padding:25px;
 
 <body>
 
+<nav>
+<img src="logo.png">
+</nav>
+
 <!-- HERO -->
 <section class="hero">
 
-<img src="logo.png" class="logo-top">
-
 <h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
-<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze 2026</p>
+<p>Starte deine Ausbildung am Bodensee – sichere dir deinen Platz 2026</p>
 
 <a href="#kontakt" class="btn">Jetzt Platz sichern</a>
 
@@ -177,21 +161,21 @@ padding:25px;
 <!-- START -->
 <section class="section">
 <h2>Ausbildungsstart</h2>
-<div class="card"><strong>18.05.2026</strong></div>
+<div class="box">18.05.2026</div>
 </section>
 
 <!-- PAKET -->
 <section class="section">
-<h2>Komplettpaket – 11.000 €</h2>
+<h2>Ausbildungspaket (11.000 €)</h2>
 
 <div class="grid">
-<div class="card">Theorie + Prüfungsvorbereitung</div>
-<div class="card">Lernmaterialien</div>
-<div class="card">Anmeldegebühren</div>
-<div class="card">Einmalige Prüfungsgebühr</div>
-<div class="card">35 Flugstunden</div>
-<div class="card">Flugzeug + Treibstoff</div>
-<div class="card">Fluglehrer</div>
+<div class="box">Theorie + Prüfungsvorbereitung</div>
+<div class="box">Lernmaterialien</div>
+<div class="box">Anmeldegebühren</div>
+<div class="box">Einmalige Prüfungsgebühr</div>
+<div class="box">35 Flugstunden</div>
+<div class="box">Flugzeug + Treibstoff</div>
+<div class="box">Fluglehrer</div>
 </div>
 
 </section>
@@ -201,19 +185,19 @@ padding:25px;
 <h2>Zusätzliche Leistungen</h2>
 
 <div class="grid">
-<div class="card">225 € pro Flugstunde extra</div>
-<div class="card">Wiederholungsprüfungen separat</div>
+<div class="box">225 € pro zusätzliche Flugstunde</div>
+<div class="box">Wiederholungsprüfungen separat</div>
 </div>
 
 </section>
 
 <!-- ZAHLUNG -->
 <section class="section">
-<h2>Zahlungsmodell</h2>
+<h2>Zahlung</h2>
 
 <div class="grid">
-<div class="card">5.000 € Anzahlung</div>
-<div class="card">6.000 € in 2 Raten</div>
+<div class="box">5.000 € Anzahlung</div>
+<div class="box">6.000 € in 2 Raten</div>
 </div>
 
 </section>
@@ -223,15 +207,15 @@ padding:25px;
 <h2>Dauer & Gültigkeit</h2>
 
 <div class="grid">
-<div class="card">6–12 Monate</div>
-<div class="card">18 Monate gültig</div>
+<div class="box">6–12 Monate</div>
+<div class="box">18 Monate gültig</div>
 </div>
 
 </section>
 
 <!-- PREIS -->
 <section class="section">
-<div class="highlight">
+<div class="price">
 <h2>Preis</h2>
 <h1>11.000 €</h1>
 <p>Komplettpaket ohne versteckte Kosten</p>
@@ -243,8 +227,8 @@ padding:25px;
 <h2>Jetzt anfragen</h2>
 
 <form>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="E-Mail">
+<input placeholder="Name">
+<input placeholder="Email">
 <textarea placeholder="Nachricht"></textarea>
 <button class="btn">Absenden</button>
 </form>
@@ -255,7 +239,6 @@ padding:25px;
 Konair GmbH – Flugschule Bodensee
 </footer>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/41763730578" target="_blank">💬</a>
 
 <script>
