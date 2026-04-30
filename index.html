@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>UL Pilotenausbildung (SPL) | Konair</title>
 
 <style>
 body {
     margin:0;
     font-family: Arial, sans-serif;
-    background:#0f172a;
-    color:white;
+    background:#f4f8fb;
+    color:#1f2937;
 }
 
 /* NAV */
@@ -20,20 +19,24 @@ nav {
     justify-content:space-between;
     align-items:center;
     padding:20px 40px;
-    background:rgba(0,0,0,0.7);
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav img { height:50px; }
+nav img {
+    height:50px;
+}
 
 /* HERO */
 .hero {
     text-align:center;
     padding:100px 20px;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    color:white;
 }
 
 .hero h1 {
-    font-size:45px;
+    font-size:42px;
 }
 
 .hero p {
@@ -42,7 +45,7 @@ nav img { height:50px; }
 }
 
 .btn {
-    background:#ff9800;
+    background:#ff7a00;
     padding:15px 30px;
     border:none;
     font-size:18px;
@@ -67,6 +70,7 @@ section {
 h2 {
     text-align:center;
     margin-bottom:30px;
+    color:#0f172a;
 }
 
 /* GRID */
@@ -77,21 +81,19 @@ h2 {
 }
 
 .card {
-    background:#1e293b;
+    background:white;
     padding:25px;
     border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
 /* PRICE */
 .price {
     text-align:center;
     background:#1e3a8a;
+    color:white;
     padding:40px;
     border-radius:12px;
-}
-
-.price h3 {
-    font-size:40px;
 }
 
 /* FORM */
@@ -105,11 +107,13 @@ form {
 
 input, textarea {
     padding:12px;
-    border:none;
+    border:1px solid #ddd;
     border-radius:6px;
 }
 
-textarea { height:100px; }
+textarea {
+    height:100px;
+}
 
 /* WHATSAPP */
 .whatsapp {
@@ -117,37 +121,42 @@ textarea { height:100px; }
     bottom:20px;
     right:20px;
     background:#25D366;
-    padding:15px;
+    padding:18px;
     border-radius:50%;
-    font-size:22px;
+    font-size:24px;
     color:white;
     text-decoration:none;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
 footer {
     text-align:center;
     padding:20px;
-    background:#020617;
+    background:#0f172a;
+    color:white;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <img src="logo.png">
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
-<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze!</p>
+<p>Werde Pilot in wenigen Monaten – sichere dir jetzt deinen Platz für 2026</p>
 
 <button class="btn" onclick="scrollToForm()">Jetzt Platz sichern</button>
 
 <div class="countdown" id="countdown"></div>
 </div>
 
+<!-- START -->
 <section>
 <h2>Ausbildungsstart</h2>
 <p style="text-align:center;font-size:22px;">
@@ -155,40 +164,56 @@ Start: <strong>18.05.2026</strong>
 </p>
 </section>
 
+<!-- ANGEBOT -->
 <section>
 <h2>Dein Komplettpaket</h2>
+
 <div class="grid">
 <div class="card">11.000 € Komplettpaket</div>
 <div class="card">Zahlungsplan möglich</div>
 <div class="card">18 Monate gültig</div>
 <div class="card">Zusatzstunden 225 €</div>
-<div class="card">Schnupperflug verfügbar</div>
+<div class="card">Schnupperflug möglich</div>
 </div>
+
 </section>
 
+<!-- VORTEILE -->
 <section>
-<h2>Warum wir?</h2>
+<h2>Warum Konair?</h2>
+
 <div class="grid">
 <div class="card">Top Lage am Bodensee</div>
 <div class="card">Erfahrene Fluglehrer</div>
 <div class="card">Moderne Flugzeuge</div>
-<div class="card">Flexible Zeiten</div>
+<div class="card">Flexible Termine</div>
+</div>
+
+</section>
+
+<!-- VERTRAUEN -->
+<section>
+<h2>Vertrauen & Sicherheit</h2>
+
+<div class="grid">
+<div class="card">✔️ Staatlich anerkannte Ausbildung</div>
+<div class="card">✔️ Viele erfolgreiche Absolventen</div>
+<div class="card">✔️ Persönliche Betreuung</div>
+<div class="card">✔️ Ausbildung mit Erfahrung</div>
+</div>
+
+</section>
+
+<!-- PREIS -->
+<section>
+<div class="price">
+<h2>Preis</h2>
+<h3>11.000 €</h3>
+<p>Komplettpaket – keine versteckten Kosten</p>
 </div>
 </section>
 
-<section class="price">
-<h2>Preis</h2>
-<h3>11.000 €</h3>
-<p>Keine versteckten Kosten</p>
-</section>
-
-<section>
-<h2>FAQ</h2>
-<div class="card">Dauer: 6–12 Monate</div>
-<div class="card">Voraussetzung: Ärztliches Attest</div>
-<div class="card">Schnupperflug möglich</div>
-</section>
-
+<!-- FORM -->
 <section id="form">
 <h2>Jetzt anfragen</h2>
 
@@ -201,11 +226,12 @@ Start: <strong>18.05.2026</strong>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
 Konair GmbH – Flugschule Bodensee
 </footer>
 
-<!-- WHATSAPP BUTTON -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/41763730578" target="_blank">
 💬
 </a>
