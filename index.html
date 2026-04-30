@@ -7,54 +7,77 @@
 <title>UL Pilotenausbildung (SPL) | Konair</title>
 
 <style>
+
 body {
 margin:0;
 font-family:Arial, sans-serif;
-background:#f4f8fb;
+background:linear-gradient(180deg,#f0f7ff,#ffffff);
 color:#1a1a1a;
 }
 
-/* NAV */
-nav {
-background:white;
-padding:20px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
-nav img { height:60px; }
-
 /* HERO */
 .hero {
-background:linear-gradient(135deg,#1e90ff,#4facfe);
-color:white;
+position:relative;
 text-align:center;
-padding:90px 20px;
+padding:120px 20px;
+background:linear-gradient(135deg,#1e3a8a,#3b82f6,#60a5fa);
+color:white;
+overflow:hidden;
 }
-.hero h1 { font-size:40px; }
-.hero p { font-size:18px; margin:15px 0; }
+
+/* LOGO BACKGROUND */
+.hero::before {
+content:"";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:url('logo.png') no-repeat center;
+background-size:500px;
+opacity:0.08;
+width:100%;
+height:100%;
+}
+
+/* LOGO TOP */
+.logo-top {
+height:70px;
+margin-bottom:20px;
+}
+
+.hero h1 {
+font-size:46px;
+margin-bottom:10px;
+}
+
+.hero p {
+font-size:20px;
+margin-bottom:20px;
+}
 
 .btn {
 background:#ff6a00;
 color:white;
-padding:14px 28px;
-border-radius:8px;
+padding:16px 30px;
+border-radius:10px;
 text-decoration:none;
 display:inline-block;
-margin-top:15px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* COUNTDOWN */
 .countdown {
 margin-top:20px;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
 max-width:1100px;
 margin:auto;
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
@@ -66,24 +89,31 @@ color:#0f172a;
 /* GRID */
 .grid {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 /* CARD */
 .card {
-background:white;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
 padding:25px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover {
+transform:translateY(-8px);
 }
 
 /* HIGHLIGHT */
 .highlight {
-background:#1e3a8a;
+background:linear-gradient(135deg,#1e40af,#3b82f6);
 color:white;
-padding:40px;
-border-radius:15px;
+padding:50px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* FORM */
@@ -92,26 +122,29 @@ max-width:500px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:12px;
 }
+
 input, textarea {
-padding:12px;
+padding:14px;
+border-radius:8px;
 border:1px solid #ddd;
-border-radius:6px;
 }
+
 textarea { height:120px; }
 
 /* WHATSAPP */
 .whatsapp {
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 background:#25D366;
 color:white;
-padding:16px;
+padding:18px;
 border-radius:50%;
-font-size:22px;
+font-size:24px;
 text-decoration:none;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
 }
 
 /* FOOTER */
@@ -119,25 +152,26 @@ footer {
 background:#0f172a;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 }
+
 </style>
 </head>
 
 <body>
 
-<nav>
-<img src="logo.png">
-</nav>
-
 <!-- HERO -->
 <section class="hero">
+
+<img src="logo.png" class="logo-top">
+
 <h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
-<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze für 2026</p>
+<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze 2026</p>
 
 <a href="#kontakt" class="btn">Jetzt Platz sichern</a>
 
 <div class="countdown" id="countdown"></div>
+
 </section>
 
 <!-- START -->
@@ -148,10 +182,10 @@ padding:20px;
 
 <!-- PAKET -->
 <section class="section">
-<h2>Dein Komplettpaket – 11.000 €</h2>
+<h2>Komplettpaket – 11.000 €</h2>
 
 <div class="grid">
-<div class="card">Theoretische Ausbildung + Prüfungsvorbereitung</div>
+<div class="card">Theorie + Prüfungsvorbereitung</div>
 <div class="card">Lernmaterialien</div>
 <div class="card">Anmeldegebühren</div>
 <div class="card">Einmalige Prüfungsgebühr</div>
@@ -167,7 +201,7 @@ padding:20px;
 <h2>Zusätzliche Leistungen</h2>
 
 <div class="grid">
-<div class="card">225 € pro zusätzliche Flugstunde</div>
+<div class="card">225 € pro Flugstunde extra</div>
 <div class="card">Wiederholungsprüfungen separat</div>
 </div>
 
@@ -189,22 +223,8 @@ padding:20px;
 <h2>Dauer & Gültigkeit</h2>
 
 <div class="grid">
-<div class="card">6–12 Monate Ausbildungsdauer</div>
-<div class="card">18 Monate Gültigkeit</div>
-</div>
-
-</section>
-
-<!-- INFOS -->
-<section class="section">
-<h2>Wichtige Hinweise</h2>
-
-<div class="grid">
-<div class="card">Termine individuell vereinbar</div>
-<div class="card">Wetterabhängige Verschiebungen</div>
-<div class="card">Absage unter 24h = 100 € Gebühr</div>
-<div class="card">Keine Rückerstattung bei Abbruch</div>
-<div class="card">Medical erforderlich</div>
+<div class="card">6–12 Monate</div>
+<div class="card">18 Monate gültig</div>
 </div>
 
 </section>
@@ -236,9 +256,7 @@ Konair GmbH – Flugschule Bodensee
 </footer>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/4917612345678?text=Hallo%20ich%20interessiere%20mich%20für%20die%20UL-Ausbildung" target="_blank">
-💬
-</a>
+<a class="whatsapp" href="https://wa.me/41763730578" target="_blank">💬</a>
 
 <script>
 const target = new Date("May 18, 2026 00:00:00").getTime();
