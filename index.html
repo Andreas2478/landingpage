@@ -11,38 +11,37 @@
 body {
 margin:0;
 font-family:Arial, sans-serif;
-background:#f4f6f9;
+background:#ffffff;
 color:#1a1a1a;
 }
 
 :root {
---blue:#0f2a44;
+--blue:#0c2340;
 --bronze:#c49a6c;
---white:#ffffff;
+--light:#f7f9fb;
 }
 
 /* HEADER */
 header {
-background:var(--blue);
+background:white;
 padding:20px;
 text-align:center;
+border-bottom:1px solid #eee;
 }
-
 header img {
 height:60px;
 }
 
 /* HERO */
 .hero {
-background:linear-gradient(rgba(15,42,68,0.9), rgba(15,42,68,0.9)),
-url('hero.jpg') center/cover;
+background:var(--blue);
 color:white;
-text-align:center;
 padding:100px 20px;
+text-align:center;
 }
 
 .hero h1 {
-font-size:42px;
+font-size:46px;
 margin-bottom:10px;
 }
 
@@ -58,7 +57,6 @@ padding:14px 28px;
 border-radius:6px;
 text-decoration:none;
 font-weight:bold;
-display:inline-block;
 }
 
 /* COUNTDOWN */
@@ -67,52 +65,61 @@ margin-top:20px;
 font-size:20px;
 }
 
-/* SECTION */
-.section {
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+/* BLOCKS */
+.block {
+padding:70px 20px;
 }
 
-/* TITLE */
-.section h2 {
-text-align:center;
-margin-bottom:40px;
-color:var(--blue);
-}
-
-/* GRID */
-.grid {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-/* BOX */
-.box {
+.block-white {
 background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* DARK SECTION */
-.dark {
+.block-light {
+background:var(--light);
+}
+
+.block-dark {
 background:var(--blue);
 color:white;
 }
 
-.dark h2 {
+.block h2 {
+text-align:center;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid {
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card {
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* DARK CARD */
+.block-dark .card {
+background:#102c50;
 color:white;
 }
 
-/* PRICE BOX */
-.price {
+/* PRICE */
+.price-box {
+max-width:600px;
+margin:auto;
+text-align:center;
+padding:40px;
 background:var(--bronze);
 color:black;
-padding:40px;
-text-align:center;
-border-radius:10px;
+border-radius:12px;
 font-size:28px;
 font-weight:bold;
 }
@@ -128,8 +135,8 @@ gap:10px;
 
 input, textarea {
 padding:12px;
-border:1px solid #ccc;
 border-radius:6px;
+border:1px solid #ccc;
 }
 
 textarea {
@@ -154,7 +161,7 @@ footer {
 background:#111;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 }
 
 </style>
@@ -171,7 +178,7 @@ padding:20px;
 
 <h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
 
-<p>Starte deine Ausbildung am Bodensee – sichere dir jetzt deinen Platz</p>
+<p>Starte deine Ausbildung am Bodensee – sichere dir deinen Platz</p>
 
 <a href="#kontakt" class="btn">Jetzt Platz sichern</a>
 
@@ -180,86 +187,88 @@ padding:20px;
 </section>
 
 <!-- START -->
-<section class="section">
+<section class="block block-white">
 <h2>Ausbildungsstart</h2>
 
-<div class="box" style="text-align:center; font-size:22px;">
+<div class="grid">
+<div class="card" style="text-align:center;font-size:22px;">
 18.05.2026
+</div>
 </div>
 
 </section>
 
 <!-- PAKET -->
-<section class="section">
-<h2>Dein Komplettpaket – 11.000 €</h2>
+<section class="block block-light">
+<h2>Komplettpaket – 11.000 €</h2>
 
 <div class="grid">
-<div class="box">Theorieunterricht & Prüfungsvorbereitung</div>
-<div class="box">Lernmaterialien inklusive</div>
-<div class="box">Anmeldegebühren enthalten</div>
-<div class="box">Einmalige Prüfungsgebühr enthalten</div>
-<div class="box">35 Flugstunden inklusive</div>
-<div class="box">Flugzeug + Treibstoff inklusive</div>
-<div class="box">Fluglehrer vollständig enthalten</div>
+<div class="card">Theorie & Prüfungsvorbereitung</div>
+<div class="card">Lernmaterialien inklusive</div>
+<div class="card">Anmeldegebühren enthalten</div>
+<div class="card">Einmalige Prüfungsgebühr</div>
+<div class="card">35 Flugstunden</div>
+<div class="card">Flugzeug & Treibstoff</div>
+<div class="card">Fluglehrer inklusive</div>
 </div>
 
 </section>
 
 <!-- ZUSATZ -->
-<section class="section dark">
-<h2>Zusätzliche Kosten</h2>
+<section class="block block-dark">
+<h2>Zusätzliche Leistungen</h2>
 
 <div class="grid">
-<div class="box">225 € pro zusätzliche Flugstunde</div>
-<div class="box">Wiederholungsprüfungen werden separat berechnet</div>
+<div class="card">225 € pro Flugstunde extra</div>
+<div class="card">Wiederholungsprüfungen separat</div>
 </div>
 
 </section>
 
 <!-- ZAHLUNG -->
-<section class="section">
-<h2>Zahlungsmodell</h2>
+<section class="block block-white">
+<h2>Zahlung</h2>
 
 <div class="grid">
-<div class="box">5.000 € Anzahlung bei Vertragsabschluss</div>
-<div class="box">6.000 € in zwei weiteren Raten</div>
+<div class="card">5.000 € Anzahlung</div>
+<div class="card">6.000 € in zwei Raten</div>
 </div>
 
 </section>
 
 <!-- DAUER -->
-<section class="section">
+<section class="block block-light">
 <h2>Dauer & Gültigkeit</h2>
 
 <div class="grid">
-<div class="box">Ausbildungsdauer: ca. 6–12 Monate</div>
-<div class="box">Gültigkeit: 18 Monate</div>
+<div class="card">6–12 Monate Ausbildungsdauer</div>
+<div class="card">18 Monate gültig</div>
 </div>
 
 </section>
 
 <!-- WARUM -->
-<section class="section dark">
+<section class="block block-dark">
 <h2>Warum Konair?</h2>
 
 <div class="grid">
-<div class="box">Top Lage am Bodensee</div>
-<div class="box">Erfahrene Fluglehrer</div>
-<div class="box">Moderne Flugzeuge</div>
-<div class="box">Flexible Termine</div>
+<div class="card">Top Lage am Bodensee</div>
+<div class="card">Erfahrene Fluglehrer</div>
+<div class="card">Moderne Flugzeuge</div>
+<div class="card">Flexible Termine</div>
 </div>
 
 </section>
 
 <!-- PREIS -->
-<section class="section">
-<div class="price">
-Komplettpreis: 11.000 €
+<section class="block block-white">
+<div class="price-box">
+Gesamtpreis: 11.000 €
 </div>
 </section>
 
 <!-- KONTAKT -->
-<section class="section" id="kontakt">
+<section class="block block-light" id="kontakt">
 <h2>Jetzt anfragen</h2>
 
 <form>
@@ -275,11 +284,9 @@ Komplettpreis: 11.000 €
 Konair GmbH – Flugschule Bodensee
 </footer>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/41763730578" target="_blank">💬</a>
 
 <script>
-
 const target = new Date("May 18, 2026 00:00:00").getTime();
 
 setInterval(()=>{
@@ -292,9 +299,7 @@ const m = Math.floor((diff%(1000*60*60))/(1000*60));
 
 document.getElementById("countdown").innerHTML =
 "Start in: " + d + " Tage " + h + "h " + m + "min";
-
 },1000);
-
 </script>
 
 </body>
