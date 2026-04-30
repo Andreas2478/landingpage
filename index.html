@@ -20,35 +20,26 @@ color:#111;
 --bronze:#c49a6c;
 --light:#f6f8fb;
 }
-.hero h1 {
-color:white;
-}
 
-.hero span {
-color:#c49a6c;
-}
-
-.hero p {
-color:#e0e6ed;
-}
-}
-
-.hero span {
-color:var(--bronze);
+/* HERO */
 .hero {
 height:100vh;
-background:linear-gradient(135deg, #0f2a44 0%, #1e4d7a 50%, #f6f8fb 100%);
-display:flex;
-align-items:center;
-justify-content:center;
-padding:30px 10px;
-}
+background:linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.8)),
+url('hero.jpg') center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 padding:20px;
+}
 
+.hero h1 {
+font-size:52px;
+line-height:1.2;
+}
+
+.hero span {
+color:var(--bronze);
 }
 
 .hero p {
@@ -90,13 +81,12 @@ gap:25px;
 margin-top:40px;
 }
 
+/* CARD */
 .card {
-background:rgba(255,255,255,0.95);
-border:1px solid rgba(196,154,108,0.3);
-border-radius:12px;
+background:white;
 padding:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* EMOTION BLOCK */
