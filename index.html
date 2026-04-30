@@ -3,146 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UL-Ausbildung | Konair</title>
+
+<title>UL Pilotenausbildung (SPL) | Konair</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8fb;
-  color: #1a1a1a;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
 }
 
-header {
-  background: white;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.7);
 }
 
-.logo {
-  max-width: 300px;
-}
+nav img { height:50px; }
 
+/* HERO */
 .hero {
-  padding: 60px 20px;
-  text-align: center;
-  background: #0b1f35;
-  color: white;
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
 }
 
-h1 {
-  font-size: 36px;
+.hero h1 {
+    font-size:45px;
 }
 
-button {
-  padding: 15px 25px;
-  font-size: 16px;
-  background: #0077ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.hero p {
+    font-size:20px;
+    margin:20px 0;
 }
 
+.btn {
+    background:#ff9800;
+    padding:15px 30px;
+    border:none;
+    font-size:18px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* COUNTDOWN */
 .countdown {
-  margin-top: 30px;
-  font-size: 24px;
-  font-weight: bold;
+    margin-top:25px;
+    font-size:24px;
 }
 
-.section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+/* SECTION */
+section {
+    padding:70px 20px;
+    max-width:1100px;
+    margin:auto;
 }
 
-.box {
-  background: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+h2 {
+    text-align:center;
+    margin-bottom:30px;
 }
 
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+}
+
+/* PRICE */
+.price {
+    text-align:center;
+    background:#1e3a8a;
+    padding:40px;
+    border-radius:12px;
+}
+
+.price h3 {
+    font-size:40px;
+}
+
+/* FORM */
+form {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:500px;
+    margin:auto;
+}
+
+input, textarea {
+    padding:12px;
+    border:none;
+    border-radius:6px;
+}
+
+textarea { height:100px; }
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    font-size:22px;
+    color:white;
+    text-decoration:none;
+}
+
+/* FOOTER */
 footer {
-  background: #0b1f35;
-  color: white;
-  text-align: center;
-  padding: 20px;
+    text-align:center;
+    padding:20px;
+    background:#020617;
 }
 </style>
-
 </head>
+
 <body>
 
-<header>
-  <!-- LOGO -->
-  <img src="logo.png" alt="Konair Logo" class="logo">
-</header>
+<nav>
+<img src="logo.png">
+</nav>
 
-<section class="hero">
-  <h1>Werde Pilot – Starte deine UL-Ausbildung (SPL)</h1>
-  <p>Starte deine Ausbildung zum Ultraleichtpiloten (SPL-Lizenz) am Bodensee.</p>
+<div class="hero">
+<h1>Werde Pilot – UL-Ausbildung (SPL)</h1>
+<p>Starte deine Ausbildung am Bodensee – begrenzte Plätze!</p>
 
-  <button>Jetzt Erstgespräch anfragen</button>
+<button class="btn" onclick="scrollToForm()">Jetzt Platz sichern</button>
 
-  <div class="countdown" id="countdown"></div>
+<div class="countdown" id="countdown"></div>
+</div>
+
+<section>
+<h2>Ausbildungsstart</h2>
+<p style="text-align:center;font-size:22px;">
+Start: <strong>18.05.2026</strong>
+</p>
 </section>
 
-<section class="section">
-  <h2>📅 Ausbildungsstart</h2>
-  <div class="box">
-    <p><strong>Start:</strong> 18.05.2026</p>
-    <p>Begrenzte Plätze verfügbar</p>
-  </div>
+<section>
+<h2>Dein Komplettpaket</h2>
+<div class="grid">
+<div class="card">11.000 € Komplettpaket</div>
+<div class="card">Zahlungsplan möglich</div>
+<div class="card">18 Monate gültig</div>
+<div class="card">Zusatzstunden 225 €</div>
+<div class="card">Schnupperflug verfügbar</div>
+</div>
 </section>
 
-<section class="section">
-  <h2>✈️ Deine UL-Ausbildung (SPL)</h2>
-  <div class="box">
-    <ul>
-      <li>Komplette Ausbildung inkl. Theorie & Praxis</li>
-      <li>Moderne Ultraleichtflugzeuge</li>
-      <li>Persönliche Betreuung</li>
-      <li>Schneller Weg zur Lizenz</li>
-    </ul>
-  </div>
+<section>
+<h2>Warum wir?</h2>
+<div class="grid">
+<div class="card">Top Lage am Bodensee</div>
+<div class="card">Erfahrene Fluglehrer</div>
+<div class="card">Moderne Flugzeuge</div>
+<div class="card">Flexible Zeiten</div>
+</div>
 </section>
 
-<section class="section">
-  <h2>💰 Komplettpaket</h2>
-  <div class="box">
-    <p><strong>Preis:</strong> 11.000 €</p>
-    <p>Zahlungsplan möglich</p>
-  </div>
+<section class="price">
+<h2>Preis</h2>
+<h3>11.000 €</h3>
+<p>Keine versteckten Kosten</p>
 </section>
 
-<section class="section">
-  <h2>📩 Kontakt</h2>
-  <div class="box">
-    <button>Jetzt anfragen</button>
-  </div>
+<section>
+<h2>FAQ</h2>
+<div class="card">Dauer: 6–12 Monate</div>
+<div class="card">Voraussetzung: Ärztliches Attest</div>
+<div class="card">Schnupperflug möglich</div>
+</section>
+
+<section id="form">
+<h2>Jetzt anfragen</h2>
+
+<form>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="E-Mail">
+<textarea placeholder="Nachricht"></textarea>
+<button class="btn">Absenden</button>
+</form>
+
 </section>
 
 <footer>
-  <p>Konair GmbH · Flugschule Bodensee</p>
+Konair GmbH – Flugschule Bodensee
 </footer>
 
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/41763730578" target="_blank">
+💬
+</a>
+
 <script>
-var countDownDate = new Date("May 18, 2026 00:00:00").getTime();
+// SCROLL
+function scrollToForm() {
+document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
 
-setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
+// COUNTDOWN
+const target = new Date("May 18, 2026 00:00:00").getTime();
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+setInterval(()=>{
+const now = new Date().getTime();
+const diff = target - now;
 
-  document.getElementById("countdown").innerHTML =
-    "Start in: " + days + " Tage " + hours + "h " + minutes + "m";
+const d = Math.floor(diff/(1000*60*60*24));
+const h = Math.floor((diff/(1000*60*60))%24);
+const m = Math.floor((diff/(1000*60))%60);
 
-}, 1000);
+document.getElementById("countdown").innerHTML =
+"Start in: " + d + " Tage " + h + "h " + m + "min";
+},1000);
 </script>
 
 </body>
