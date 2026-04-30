@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UL-Ausbildung | Konair</title>
 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8fb;
+  color: #1a1a1a;
+}
+
+header {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  max-width: 300px;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0b1f35;
+  color: white;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 16px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.countdown {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+footer {
+  background: #0b1f35;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <!-- LOGO -->
+  <img src="logo.png" alt="Konair Logo" class="logo">
+</header>
+
+<section class="hero">
+  <h1>Werde Pilot – Starte deine UL-Ausbildung (SPL)</h1>
+  <p>Starte deine Ausbildung zum Ultraleichtpiloten (SPL-Lizenz) am Bodensee.</p>
+
+  <button>Jetzt Erstgespräch anfragen</button>
+
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<section class="section">
+  <h2>📅 Ausbildungsstart</h2>
+  <div class="box">
+    <p><strong>Start:</strong> 18.05.2026</p>
+    <p>Begrenzte Plätze verfügbar</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>✈️ Deine UL-Ausbildung (SPL)</h2>
+  <div class="box">
+    <ul>
+      <li>Komplette Ausbildung inkl. Theorie & Praxis</li>
+      <li>Moderne Ultraleichtflugzeuge</li>
+      <li>Persönliche Betreuung</li>
+      <li>Schneller Weg zur Lizenz</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>💰 Komplettpaket</h2>
+  <div class="box">
+    <p><strong>Preis:</strong> 11.000 €</p>
+    <p>Zahlungsplan möglich</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>📩 Kontakt</h2>
+  <div class="box">
+    <button>Jetzt anfragen</button>
+  </div>
+</section>
+
+<footer>
+  <p>Konair GmbH · Flugschule Bodensee</p>
+</footer>
+
+<script>
+var countDownDate = new Date("May 18, 2026 00:00:00").getTime();
+
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("countdown").innerHTML =
+    "Start in: " + days + " Tage " + hours + "h " + minutes + "m";
+
+}, 1000);
+</script>
+
+</body>
+</html>
