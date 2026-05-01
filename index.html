@@ -311,6 +311,9 @@ document.getElementById("countdown").innerHTML =
 "Start in: " + d + " Tage " + h + "h " + m + "min";
 },1000);
 </script>
+  if (window.location.hash) {
+  history.replaceState(null, null, ' ');
+}
 
 </body>
   <div class="header">
