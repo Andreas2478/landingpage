@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
- 
-}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Werde Pilot | Konair</title>
 
 <style>
- 
-}
 body {
 margin:0;
 font-family: Arial, sans-serif;
@@ -29,42 +25,41 @@ z-index:100;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 .logo {
-height: 90px;
-width: auto;
-object-fit: contain;
+height:60px;
 }
 
 /* HERO */
-<section class="hero">
-<div class="hero-content">
+.hero {
+margin-top:80px;
+background:linear-gradient(rgba(0,60,130,0.7), rgba(0,60,130,0.7)),
+url('DEIN-FLUGZEUG-HIER.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+padding:100px 20px;
+text-align:center;
+}
 
-<div class="hero-text">
-<h1>Werde Pilot –<br><span>Starte jetzt deine Zukunft</span></h1>
+.hero h1 {
+font-size:42px;
+margin-bottom:10px;
+}
 
-<p class="sub">
-Nur wenige Plätze verfügbar – sichere dir jetzt deinen Platz
-</p>
+.hero span {
+color:#d4af37;
+}
 
-<ul class="benefits">
-<li>✈️ 35 Flugstunden inklusive</li>
-<li>👨‍✈️ Erfahrene Fluglehrer</li>
-<li>📘 Theorie & Prüfung komplett</li>
-<li>📚 Lernmaterial inklusive</li>
-<li>🏆 SPL Lizenz garantiert</li>
-<li>📍 Standort: Bodensee</li>
-</ul>
+.cta {
+background:#d4af37;
+color:black;
+padding:15px 30px;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+margin-top:20px;
+}
 
-<div class="price">Komplettpaket nur <strong>11.000€</strong></div>
-
-<a href="#kontakt" class="cta">Jetzt Platz sichern</a>
-</div>
-
-<div class="hero-image">
-<img src="flugzeug.jpg" alt="Flugzeug">
-</div>
-
-</div>
-</section>
 /* SECTIONS */
 .section {
 padding:60px 20px;
@@ -86,15 +81,42 @@ box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* FORM */
-form {
+.form {
 max-width:600px;
-margin:60px auto;
-padding:30px;
-background:white;
-border-radius:15px;
-box-shadow:0 15px 50px rgba(0,0,0,0.1);
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
+.row {
+display:flex;
+gap:10px;
+}
+.row input {
+flex:1;
+}
+
+input, textarea {
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+width:100%;
+}
+
+button {
+background:#0b3d91;
+color:white;
+padding:15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover {
+background:#092c6b;
+}
 
 /* WHATSAPP */
 .whatsapp {
@@ -119,112 +141,6 @@ margin-top:50px;
 }
 
 </style>
- 
-}
- .conversion {
-display:grid;
-
-gap:50px;
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
-align-items:center;
-}
-
-/* LEFT */
-.left h2 {
-font-size:36px;
-color:#0b3d91;
-margin-bottom:10px;
-}
-
-.subtitle {
-color:#666;
-margin-bottom:25px;
-}
-
-.benefits {
-display:grid;
-gap:15px;
-}
-
-.benefit {
-background:white;
-padding:15px 20px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-font-weight:500;
-}
-
-/* PRICE */
-.price {
-margin-top:30px;
-font-size:22px;
-font-weight:bold;
-}
-
-.price span {
-color:#cfa84f; /* Bronze */
-font-size:28px;
-}
-
-/* RIGHT (FORM CARD) */
-.right {
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
-}
-
-.right h3 {
-margin-bottom:20px;
-color:#0b3d91;
-}
-
-/* FORM */
-.form {
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.row {
-display:flex;
-gap:10px;
-}
-
-.row input {
-flex:1;
-}
-
-input, textarea {
-padding:15px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:16px;
-width:100%;
-}
-
-button {
-background:#0b3d91;
-color:white;
-padding:15px;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover {
-background:#092f6b;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-.conversion {
-
-
 </head>
 
 <body>
@@ -243,31 +159,30 @@ background:#092f6b;
 </div>
 
 <!-- VORTEILE -->
-<section class="conversion">
+<div class="section">
+<h2 style="text-align:center;">Warum Konair?</h2>
 
-<!-- LEFT -->
-<div class="left">
-<h2>Werde Pilot – Starte jetzt deine Zukunft</h2>
-<p class="subtitle">Nur wenige Plätze verfügbar – sichere dir jetzt deinen Platz</p>
-
-<div class="benefits">
-<div class="benefit">✈️ 35 Flugstunden inklusive</div>
-<div class="benefit">👨‍✈️ Erfahrene Fluglehrer</div>
-<div class="benefit">📘 Theorie & Prüfung komplett</div>
-<div class="benefit">📚 Lernmaterial inklusive</div>
-<div class="benefit">🏆 SPL Lizenz garantiert</div>
-<div class="benefit">📍 Standort: Bodensee</div>
-</div>
-
-<div class="price">
-Komplettpaket nur <span>11.000€</span>
+<div class="cards">
+<div class="card">✈️ Professionelle Ausbildung</div>
+<div class="card">👨‍✈️ Erfahrene Fluglehrer</div>
+<div class="card">🌍 Top Lage am Bodensee</div>
+<div class="card">⏳ Flexible Termine</div>
 </div>
 </div>
 
-<!-- RIGHT -->
-<div class="right">
-<h3>Jetzt Platz sichern</h3>
-
+<!-- PAKET -->
+<div class="section">
+<h2>Dein Komplettpaket – 11.000€</h2>
+<div class="card">
+<ul>
+<li>Theorie & Prüfung</li>
+<li>35 Flugstunden</li>
+<li>Fluglehrer</li>
+<li>Lernmaterial</li>
+<li>SPL Lizenz</li>
+</ul>
+</div>
+</div>
 
 <!-- FORM -->
 <div class="section">
@@ -299,3 +214,4 @@ Konair Flugschule Bodensee
 
 </body>
 </html>
+
