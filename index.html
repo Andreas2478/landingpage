@@ -143,6 +143,27 @@ margin-top:50px;
 }
 
 </style>
+  .paket-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.paket-box {
+background:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+font-weight:bold;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.2s;
+}
+
+.paket-box:hover {
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
 </head>
 
 <body>
