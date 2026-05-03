@@ -6,20 +6,41 @@
 <title>Werde Pilot | Konair</title>
 
 <style>
-  #form-status {
-margin-top:10px;
-font-weight:bold;
-color:#0f2a44;
+/* FORM DESIGN */
+.form {
+max-width:600px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
-.header {
-position:fixed;
-top:0;
-left:0;
+
+.row {
+display:flex;
+gap:15px;
+}
+
+.row input {
+flex:1;
+}
+
+input, textarea {
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
 width:100%;
-text-align:center;
-padding:10px 0;
-background:rgba(255,255,255,0.95);
-z-index:100;
+}
+
+button {
+background:#0b3d91;
+color:white;
+padding:15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+</style>
 }
 
 .logo {
