@@ -6,6 +6,47 @@
 <title>Konair – Werde Pilot</title>
 
 <style>
+  .grid {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card-big {
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:left;
+}
+
+.card-big h2 {
+margin-top:0;
+color:#0b3d91;
+}
+
+.price {
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+}
+
+.price-row {
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+/* Mobile */
+@media(max-width:800px){
+.grid {grid-template-columns:1fr;}
+}
+
+
 
 /* RESET */
 body {margin:0;font-family:Arial;background:#f5f7fb;}
@@ -161,6 +202,46 @@ text-decoration:none;
 .row {flex-direction:column;}
 .hero h1 {font-size:30px;}
 }
+/* GRID BLOCK */
+.grid {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card-big {
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:left;
+}
+
+.card-big h2 {
+color:#0b3d91;
+margin-top:0;
+}
+
+.price {
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+}
+
+.price-row {
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+/* Mobile */
+@media(max-width:800px){
+.grid {grid-template-columns:1fr;}
+}
 
 </style>
 </head>
@@ -193,37 +274,45 @@ text-decoration:none;
 
 <div class="grid">
 
-<div class="benefits">
-<h3>Warum Konair?</h3>
-<h3>UL-Pilotenausbildung (SPL)</h3>
-<p>Werde Pilot – mit unserem All-Inclusive Ausbildungspaket.</p>
+<!-- AUSBILDUNG -->
+<div class="card-big">
+
+<h2>Werde Pilot</h2>
+<p>All-Inclusive Ausbildung zum UL-Piloten</p>
 
 <ul>
-<li>✈️ 35 Flugstunden inklusive</li>
-<li>👨‍✈️ Persönliche Betreuung durch erfahrene Fluglehrer</li>
-<li>📘 Theorieunterricht & Prüfungsvorbereitung</li>
-<li>📚 Lernmaterial inklusive</li>
-<li>🏆 Dein Weg zur SPL-Lizenz</li>
-<li>📍 Ausbildung am Bodensee</li>
+<li>✈️ 35 Flugstunden</li>
+<li>👨‍✈️ Persönliche Fluglehrer</li>
+<li>📘 Theorie & Prüfung</li>
+<li>📚 Lernmaterial</li>
+<li>🏆 SPL Lizenz</li>
+<li>📍 Bodensee</li>
 </ul>
 
-<p><strong>All-Inclusive Paket: 11.000 €</strong></p>
-<p><strong>Ausbildungsstart: 18.05.2026</strong></p>
+<p class="price">11.000 € Komplettpaket</p>
+<p>Start: 18.05.2026</p>
 
-<a href="#kontakt" class="cta">Jetzt Ausbildungsplatz sichern</a>
+<a href="#kontakt" class="cta">Ausbildung starten</a>
 
-<div class="pricing">
-<h3>Rundflug Preise</h3>
+</div>
+
+<!-- RUNDFLUG -->
+<div class="card-big">
+
+<h2>Rundflug erleben</h2>
+<p>Das perfekte Geschenk</p>
 
 <div class="price-row"><span>30 Minuten</span><strong>150€</strong></div>
 <div class="price-row"><span>60 Minuten</span><strong>230€</strong></div>
 <div class="price-row"><span>90 Minuten</span><strong>280€</strong></div>
 
-<a href="#kontakt" class="cta">Jetzt Gutschein sichern</a>
+<a href="#kontakt" class="cta">Gutschein sichern</a>
 
 </div>
 
 </div>
+
+
 </section>
 
 <!-- REVIEW -->
