@@ -4,6 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Konair-werde Pilot</title>
+.rundflug {
+max-width: 700px;
+margin: 60px auto;
+background: white;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.rundflug h2 {
+color: #0b3d91;
+text-align: center;
+}
+
+.subtitle {
+text-align: center;
+margin-bottom: 30px;
+color: #555;
+}
+
+.flight-box {
+padding: 20px;
+margin-bottom: 20px;
+border-bottom: 1px solid #eee;
+}
+
+.flight-header {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.dauer {
+color: #0b3d91;
+font-weight: bold;
+font-size: 18px;
+}
+
+.preis {
+color: #0b3d91;
+font-weight: bold;
+font-size: 20px;
+}
+
+.highlight {
+background: #f0f6ff;
+border-radius: 12px;
+}
+
+.bestseller {
+background: #fff7e6;
+border-radius: 12px;
+border: 2px solid #d4af37;
+}
+
+.cta-big {
+display: block;
+text-align: center;
+background: #d4af37;
+color: black;
+padding: 15px;
+border-radius: 12px;
+font-weight: bold;
+margin-top: 20px;
+text-decoration: none;
+}
+
 
 <style>
   .grid {
@@ -312,27 +379,49 @@ font-size: 20px;
 </div>
 
 <!-- RUNDFLUG -->
-<div class="card-big">
+<section class="rundflug">
+<h2>✈️ Schenke Emotionen – Rundflug Bodensee</h2>
+<p class="subtitle">
+Erlebe den Bodensee wie noch nie – aus der Luft.
+Gänsehaut. Freiheit. Unvergessliche Momente.
+</p>
 
-<h2>Rundflug erleben</h2>
-<p>Das perfekte Geschenk</p>
-
-<div class="price-row"><span class="dauer">30 Minuten: Stein am Rhein und der Hegau, das Vulkan- und Burgenland,
-oberer und unterer Bodensee</span><strong>150€</strong></div>
-<div class="price-row"><span>60 Minuten: Stein am Rhein, Schaffhausen mit Munot und Rheinfall,
-der grösste Wasserfall Europas aus schönster Vogelschau.</span><strong>230€</strong></div>
-<div class="price-row"><span>90 Minuten: oberer Bodensee, St. Gallen und das Appenzellerland
-mit Säntis und Alpsteingebirge – die nördlichsten und höchsten Ausläufer
-der Alpen</span><strong>280€</strong></div>
-
-<a href="#kontakt" class="cta">Gutschein sichern</a>
-
+<div class="flight-box highlight">
+<div class="flight-header">
+<span class="dauer">🔥 30 Minuten</span>
+<span class="preis">150€</span>
+</div>
+<p>
+Stein am Rhein • Hegau • Vulkanlandschaft •
+Oberer & Unterer Bodensee
+</p>
 </div>
 
+<div class="flight-box bestseller">
+<div class="flight-header">
+<span class="dauer">⭐ 60 Minuten (BELIEBT)</span>
+<span class="preis">230€</span>
+</div>
+<p>
+Rheinfall • Schaffhausen • Munot •
+Europas größter Wasserfall aus der Luft
+</p>
 </div>
 
+<div class="flight-box">
+<div class="flight-header">
+<span class="dauer">🏔 90 Minuten</span>
+<span class="preis">280€</span>
+</div>
+<p>
+Alpenblick • Säntis • Appenzell •
+Bodensee & Bergpanorama pur
+</p>
+</div>
 
+<a href="#kontakt" class="cta-big">🎁 Gutschein jetzt sichern</a>
 </section>
+
 
 <!-- REVIEW -->
 <section class="review">
