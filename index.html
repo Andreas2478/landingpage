@@ -4,267 +4,581 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>Konair Flugschule Bodensee | Pilot werden & Rundflüge erleben</title>
-<meta name="description" content="Werde Pilot am Bodensee oder erlebe unvergessliche Rundflüge über Alpen & Rheinfall. Jetzt Platz sichern bei Konair.">
+<title>Konair Flugschule Bodensee | Pilot werden & Rundflug erleben</title>
+<meta name="description" content="Konair Flugschule Bodensee: UL-Pilotenausbildung SPL, Rundflüge über Bodensee, Alpen und Rheinfall. Jetzt Ausbildungsplatz oder Gutschein sichern.">
 
 <style>
+* {
+box-sizing: border-box;
+}
 
-/* RESET */
+html {
+scroll-behavior: smooth;
+}
+
 body {
-margin:0;
-font-family:Arial;
-background:#f5f7fb;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: #f5f7fb;
+color: #111;
+}
+
+:root {
+--blue: #0b3d91;
+--blue2: #062b66;
+--gold: #d4af37;
+--light: #f5f7fb;
 }
 
 /* HEADER */
 .header {
-position:fixed;
-top:0;
-width:100%;
-background:white;
-text-align:center;
-padding:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:100;
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(255,255,255,0.96);
+backdrop-filter: blur(10px);
+text-align: center;
+padding: 10px;
+z-index: 999;
+box-shadow: 0 2px 18px rgba(0,0,0,0.12);
 }
 
 .logo {
-height:90px;
+height: 85px;
+width: auto;
 }
 
 /* HERO */
 .hero {
-margin-top:110px;
-background:linear-gradient(rgba(0,60,130,0.7), rgba(0,60,130,0.7)),
-url('flugzeug.JPG');
-background-size:cover;
-color:white;
-text-align:center;
-padding:100px 20px;
+margin-top: 105px;
+min-height: 78vh;
+background:
+linear-gradient(rgba(4,30,70,0.70), rgba(4,30,70,0.78)),
+url("flugzeug.JPG");
+background-size: cover;
+background-position: center;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 80px 20px;
+}
+
+.hero-inner {
+max-width: 980px;
+}
+
+.hero-badge {
+display: inline-block;
+background: rgba(212,175,55,0.18);
+border: 1px solid var(--gold);
+padding: 8px 18px;
+border-radius: 999px;
+color: #fff;
+font-weight: bold;
+margin-bottom: 20px;
 }
 
 .hero h1 {
-font-size:40px;
+font-size: clamp(34px, 6vw, 68px);
+line-height: 1.08;
+margin: 0;
+}
+
+.hero h1 span {
+color: var(--gold);
+}
+
+.hero p {
+font-size: 21px;
+margin: 24px auto;
+max-width: 720px;
+}
+
+.hero-actions {
+display: flex;
+justify-content: center;
+gap: 14px;
+flex-wrap: wrap;
 }
 
 .cta {
-background:#d4af37;
-padding:15px 30px;
-border-radius:10px;
-color:black;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-margin-top:20px;
+display: inline-block;
+background: var(--gold);
+color: #111;
+padding: 16px 28px;
+border-radius: 14px;
+text-decoration: none;
+font-weight: 800;
+box-shadow: 0 14px 30px rgba(0,0,0,0.22);
 }
 
-/* GRID */
-.grid {
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-padding:40px;
+.cta.secondary {
+background: white;
+color: var(--blue);
 }
 
-/* CARD */
-.card {
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+.countdown {
+margin-top: 24px;
+font-size: 20px;
+font-weight: bold;
 }
 
-/* TITLES */
-h2 {
-color:#0b3d91;
+/* TRUST BAR */
+.trust {
+background: white;
+padding: 18px 20px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* LIST */
-ul {
-padding-left:20px;
+.trust div {
+font-weight: bold;
+color: var(--blue);
 }
 
-/* BUTTON */
-.btn {
-background:#d4af37;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
-color:black;
-display:inline-block;
-margin-top:15px;
-font-weight:bold;
+/* SECTION */
+.section {
+padding: 80px 20px;
 }
 
-/* FLIGHT BOX */
+.section h2 {
+text-align: center;
+color: var(--blue);
+font-size: 38px;
+margin-bottom: 15px;
+}
+
+.section-sub {
+text-align: center;
+max-width: 760px;
+margin: 0 auto 45px;
+font-size: 19px;
+color: #555;
+}
+
+/* OFFER GRID */
+.offer-grid {
+max-width: 1180px;
+margin: auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 28px;
+}
+
+.offer-card {
+background: white;
+border-radius: 24px;
+padding: 34px;
+box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+position: relative;
+overflow: hidden;
+}
+
+.offer-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+height: 7px;
+width: 100%;
+background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.offer-card h3 {
+color: var(--blue);
+font-size: 30px;
+margin-top: 0;
+}
+
+.offer-card ul {
+padding-left: 20px;
+line-height: 1.8;
+font-size: 17px;
+}
+
+.price-big {
+font-size: 30px;
+font-weight: 900;
+color: var(--blue);
+margin: 22px 0 8px;
+}
+
+.warning {
+color: #b00020;
+font-weight: 800;
+}
+
+/* RUNDFLUG BOXES */
 .flight-box {
-padding:15px;
-border-bottom:1px solid #eee;
+background: #f7f9ff;
+border-radius: 16px;
+padding: 18px;
+margin-bottom: 16px;
+border: 1px solid #e2e8ff;
+}
+
+.flight-box.best {
+background: #fff8df;
+border: 2px solid var(--gold);
 }
 
 .flight-top {
-display:flex;
-justify-content:space-between;
-font-weight:bold;
-color:#0b3d91;
+display: flex;
+justify-content: space-between;
+gap: 14px;
+align-items: flex-start;
+color: var(--blue);
+font-weight: 900;
+font-size: 19px;
 }
 
-.bestseller {
-background:#fff7e6;
-border:2px solid #d4af37;
-border-radius:10px;
+.flight-box p {
+margin-bottom: 0;
+color: #333;
+line-height: 1.5;
 }
 
-/* TRUST */
-.trust {
-background:#0b3d91;
-color:white;
-text-align:center;
-padding:40px;
+/* IMAGE STRIP */
+.image-section {
+background:
+linear-gradient(rgba(4,30,70,0.50), rgba(4,30,70,0.65)),
+url("bodensee.jpg");
+background-size: cover;
+background-position: center;
+color: white;
+text-align: center;
+padding: 100px 20px;
 }
 
-/* FORM */
+.image-section h2 {
+color: white;
+font-size: 44px;
+}
+
+.image-section p {
+font-size: 22px;
+max-width: 760px;
+margin: auto;
+}
+
+/* REVIEWS */
+.reviews {
+background: var(--blue);
+color: white;
+text-align: center;
+padding: 70px 20px;
+}
+
+.reviews h2 {
+color: white;
+font-size: 36px;
+}
+
+.review-grid {
+max-width: 1000px;
+margin: 35px auto 0;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.review {
+background: rgba(255,255,255,0.12);
+padding: 24px;
+border-radius: 18px;
+}
+
+/* CONTACT */
+.contact {
+padding: 90px 20px;
+}
+
 .form {
-max-width:500px;
-margin:40px auto;
-background:white;
-padding:20px;
-border-radius:15px;
+max-width: 720px;
+margin: auto;
+background: white;
+padding: 34px;
+border-radius: 24px;
+box-shadow: 0 20px 60px rgba(0,0,0,0.12);
 }
 
-input, textarea {
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ddd;
+.form h2 {
+margin-top: 0;
+}
+
+.row {
+display: flex;
+gap: 14px;
+}
+
+.row input {
+flex: 1;
+}
+
+input, textarea, select {
+width: 100%;
+padding: 16px;
+border-radius: 14px;
+border: 1px solid #ddd;
+font-size: 16px;
+margin-bottom: 14px;
+}
+
+textarea {
+min-height: 130px;
 }
 
 button {
-background:#0b3d91;
-color:white;
-padding:15px;
-border:none;
-border-radius:10px;
-width:100%;
+width: 100%;
+background: linear-gradient(135deg, var(--blue), #1f5bd8);
+color: white;
+border: none;
+padding: 18px;
+border-radius: 14px;
+font-size: 18px;
+font-weight: 900;
+cursor: pointer;
+}
+
+button:hover {
+transform: scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+background: #061d45;
+color: white;
+text-align: center;
+padding: 40px 20px;
 }
 
 /* WHATSAPP */
 .whatsapp {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
+position: fixed;
+right: 22px;
+bottom: 22px;
+background: #25D366;
+color: white;
+width: 66px;
+height: 66px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+font-size: 30px;
+box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+z-index: 999;
 }
 
 /* MOBILE */
-@media(max-width:900px){
-.grid {grid-template-columns:1fr;}
-.hero h1 {font-size:28px;}
+@media(max-width: 900px) {
+.logo {
+height: 70px;
 }
 
+.hero {
+margin-top: 92px;
+min-height: 72vh;
+}
+
+.trust {
+grid-template-columns: 1fr 1fr;
+}
+
+.offer-grid,
+.review-grid {
+grid-template-columns: 1fr;
+}
+
+.row {
+flex-direction: column;
+}
+
+.flight-top {
+flex-direction: column;
+}
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<img src="logo.png" class="logo">
+<header class="header">
+<img src="logo.png" class="logo" alt="Konair Flugschule Rundflüge">
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-badge">Flugschule & Rundflüge am Bodensee</div>
+<h1>Werde Pilot.<br><span>Oder verschenke ein Erlebnis fürs Leben.</span></h1>
+<p>Konair bringt Menschen in die Luft: mit professioneller UL-Pilotenausbildung und unvergesslichen Rundflügen über Bodensee, Alpen und Rheinfall.</p>
+
+<div class="hero-actions">
+<a href="#angebote" class="cta">Angebote ansehen</a>
+<a href="#kontakt" class="cta secondary">Jetzt anfragen</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-<h1>Fliegen ist mehr als ein Traum<br>Es ist dein nächster Schritt</h1>
-<p>Starte deine Pilotenausbildung oder erlebe den Bodensee aus der Luft</p>
-<a href="#kontakt" class="cta">Jetzt Platz sichern</a>
+<div class="countdown" id="countdown"></div>
+</div>
 </section>
 
-<!-- GRID -->
-<div class="grid">
+<section class="trust">
+<div>⭐ 5-Sterne Erlebnis</div>
+<div>✈️ Erfahrene Piloten</div>
+<div>📍 Bodensee / Konstanz</div>
+<div>🎁 Gutscheine möglich</div>
+</section>
 
-<!-- PILOT -->
-<div class="card">
-<h2>✈️ Werde Pilot</h2>
+<section class="section" id="angebote">
+<h2>Wähle deinen Weg in die Luft</h2>
+<p class="section-sub">Ob du selbst Pilot werden willst oder jemandem ein einmaliges Erlebnis schenken möchtest – bei Konair beginnt der Traum vom Fliegen.</p>
+
+<div class="offer-grid">
+
+<div class="offer-card">
+<h3>✈️ UL-Pilotenausbildung (SPL)</h3>
+<p><strong>All-Inclusive Ausbildungspaket für angehende Ultraleicht-Piloten.</strong></p>
 
 <ul>
 <li>35 Flugstunden inklusive</li>
-<li>Erfahrene Fluglehrer</li>
-<li>Theorie & Prüfung komplett</li>
+<li>Persönliche Betreuung durch erfahrene Fluglehrer</li>
+<li>Theorieunterricht & Prüfungsvorbereitung</li>
 <li>Lernmaterial inklusive</li>
-<li>SPL Lizenz garantiert</li>
-<li>Bodensee & Alpenblick</li>
+<li>Dein Weg zur SPL-Lizenz</li>
+<li>Ausbildung am Bodensee</li>
 </ul>
 
-<h3>11.000€ Komplettpaket</h3>
-<p>Start: 18.05.2026</p>
+<div class="price-big">11.000 € Komplettpaket</div>
+<p><strong>Ausbildungsstart: 18.05.2026</strong></p>
+<p class="warning">Nur begrenzte Ausbildungsplätze verfügbar.</p>
 
-<a href="#kontakt" class="btn">Ausbildung starten</a>
+<a href="#kontakt" class="cta">Ausbildungsplatz sichern</a>
 </div>
 
-<!-- RUNDFLUG -->
-<div class="card">
-
-<h2>🎁 Rundflug erleben</h2>
-<p>Das perfekte Geschenk – Emotionen garantiert</p>
+<div class="offer-card">
+<h3>🎁 Rundflug erleben</h3>
+<p><strong>Das perfekte Geschenk: Emotion, Freiheit und Bodensee aus der Luft.</strong></p>
 
 <div class="flight-box">
 <div class="flight-top">
 <span>🔥 30 Minuten</span>
-<strong>150€</strong>
+<strong>150 €</strong>
 </div>
-<p>Bodensee • Hegau • Vulkanlandschaft</p>
+<p>Stein am Rhein, Hegau, Vulkan- und Burgenland, oberer und unterer Bodensee.</p>
 </div>
 
-<div class="flight-box bestseller">
+<div class="flight-box best">
 <div class="flight-top">
-<span>⭐ 60 Minuten (BELIEBT)</span>
-<strong>230€</strong>
+<span>⭐ 60 Minuten – beliebt</span>
+<strong>230 €</strong>
 </div>
-<p>Rheinfall • Schaffhausen • Wasserfall</p>
+<p>Stein am Rhein, Schaffhausen mit Munot und Rheinfall – Europas größter Wasserfall aus der Luft.</p>
 </div>
 
 <div class="flight-box">
 <div class="flight-top">
 <span>🏔 90 Minuten</span>
-<strong>280€</strong>
+<strong>280 €</strong>
 </div>
-<p>Alpenblick • Säntis • Panorama</p>
-</div>
-
-<a href="#kontakt" class="btn">Gutschein sichern</a>
-
+<p>Oberer Bodensee, St. Gallen, Appenzellerland, Säntis und Alpenpanorama.</p>
 </div>
 
+<a href="#kontakt" class="cta">Gutschein sichern</a>
 </div>
 
-<!-- TRUST -->
-<div class="trust">
-<h2>„Das beste Erlebnis meines Lebens!“</h2>
-⭐⭐⭐⭐⭐ Kundenbewertung
+</div>
+</section>
+
+<section class="image-section">
+<h2>Ein Erlebnis. Drei Länder. Unvergessliche Eindrücke.</h2>
+<p>Fliege über Wasser, Berge und Landschaften, die man vom Boden aus nie so erlebt.</p>
+</section>
+
+<section class="reviews">
+<h2>Warum Kunden Konair wählen</h2>
+
+<div class="review-grid">
+<div class="review">
+<h3>⭐ Sicherheit</h3>
+<p>Erfahrene Piloten, persönliche Betreuung und moderne Flugzeuge.</p>
 </div>
 
-<!-- FORM -->
-<div id="kontakt" class="form">
-<h2>Jetzt starten</h2>
+<div class="review">
+<h3>⭐ Emotion</h3>
+<p>Ein Rundflug bleibt nicht nur im Kopf, sondern im Herzen.</p>
+</div>
 
-<form action="https://formspree.io/f/mdabarnw" method="POST">
+<div class="review">
+<h3>⭐ Ausbildung</h3>
+<p>Strukturierter Weg zur SPL-Lizenz mit professioneller Begleitung.</p>
+</div>
+</div>
+</section>
+
+<section class="contact" id="kontakt">
+<form class="form" action="https://formspree.io/f/mdabarnw" method="POST">
+<h2>Jetzt unverbindlich anfragen</h2>
+<p style="text-align:center;color:#b00020;font-weight:bold;">⚠️ Nur wenige Termine und Ausbildungsplätze verfügbar</p>
+
+<div class="row">
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="E-Mail" required>
-<textarea name="message" placeholder="Nachricht"></textarea>
-<button type="submit">Anfrage senden</button>
-</form>
-
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/41763730578" class="whatsapp">💬</a>
+<select name="interesse" required>
+<option value="">Ich interessiere mich für...</option>
+<option>UL-Pilotenausbildung SPL</option>
+<option>Rundflug 30 Minuten</option>
+<option>Rundflug 60 Minuten</option>
+<option>Rundflug 90 Minuten</option>
+<option>Geschenkgutschein</option>
+</select>
+
+<textarea name="message" placeholder="Nachricht"></textarea>
+
+<input type="hidden" name="_subject" value="Neue Anfrage über Konair Landingpage">
+<input type="hidden" name="_autoresponse" value="Vielen Dank für deine Anfrage bei Konair. Wir melden uns schnellstmöglich bei dir.">
+
+<button type="submit">Jetzt Anfrage senden</button>
+</form>
+</section>
+
+<footer class="footer">
+<strong>Konair Flugschule & Rundflüge</strong><br>
+Bodensee / Konstanz · Pilotenausbildung · Rundflüge · Gutscheine
+</footer>
+
+<a class="whatsapp" href="https://wa.me/4917623774231?text=Hallo%20Konair,%20ich%20interessiere%20mich%20für%20einen%20Rundflug%20oder%20eine%20Pilotenausbildung." target="_blank">💬</a>
+
+<script>
+const targetDate = new Date("2026-05-18T00:00:00").getTime();
+
+function updateCountdown() {
+const now = new Date().getTime();
+const diff = targetDate - now;
+
+if (diff <= 0) {
+document.getElementById("countdown").innerHTML = "Der Ausbildungsstart läuft – jetzt nächsten Platz sichern!";
+return;
+}
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+document.getElementById("countdown").innerHTML =
+"⏳ Ausbildungsstart in: " + days + " Tage " + hours + "h " + minutes + "min";
+}
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
+</script>
 
 </body>
 </html>
