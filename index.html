@@ -3,160 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Konair-werde Pilot</title>
-.rundflug {
-max-width: 700px;
-margin: 60px auto;
-background: white;
-padding: 30px;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
 
-.rundflug h2 {
-color: #0b3d91;
-text-align: center;
-}
-
-.subtitle {
-text-align: center;
-margin-bottom: 30px;
-color: #555;
-}
-
-.flight-box {
-padding: 20px;
-margin-bottom: 20px;
-border-bottom: 1px solid #eee;
-}
-
-.flight-header {
-display: flex;
-justify-content: space-between;
-margin-bottom: 10px;
-}
-
-.dauer {
-color: #0b3d91;
-font-weight: bold;
-font-size: 18px;
-}
-
-.preis {
-color: #0b3d91;
-font-weight: bold;
-font-size: 20px;
-}
-
-.highlight {
-background: #f0f6ff;
-border-radius: 12px;
-}
-
-.bestseller {
-background: #fff7e6;
-border-radius: 12px;
-border: 2px solid #d4af37;
-}
-
-.cta-big {
-display: block;
-text-align: center;
-background: #d4af37;
-color: black;
-padding: 15px;
-border-radius: 12px;
-font-weight: bold;
-margin-top: 20px;
-text-decoration: none;
-}
-
-.hero-img {
-width: 100%;
-border-radius: 15px;
-margin-bottom: 20px;
-}
-  .flight-box {
-background: #fff;
-padding: 20px;
-border-radius: 12px;
-margin-bottom: 15px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.flight-top {
-display: flex;
-justify-content: space-between;
-font-weight: bold;
-color: #0b3d91;
-}
-
-.mini-cta {
-display: inline-block;
-margin-top: 10px;
-background: #d4af37;
-padding: 10px 15px;
-border-radius: 8px;
-color: black;
-text-decoration: none;
-font-weight: bold;
-}
-
-.bestseller {
-border: 2px solid #d4af37;
-background: #fff9e6;
-}
-
-.premium {
-background: #f0f6ff;
-}
+<!-- SEO -->
+<title>Konair Flugschule Bodensee | Pilot werden & Rundflüge erleben</title>
+<meta name="description" content="Werde Pilot am Bodensee oder erlebe unvergessliche Rundflüge über Alpen & Rheinfall. Jetzt Platz sichern bei Konair.">
 
 <style>
-  .grid {
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card-big {
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-text-align:left;
-}
-
-.card-big h2 {
-margin-top:0;
-color:#0b3d91;
-}
-
-.price {
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-}
-
-.price-row {
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid #eee;
-}
-
-/* Mobile */
-@media(max-width:800px){
-.grid {grid-template-columns:1fr;}
-}
-
-
 
 /* RESET */
-body {margin:0;font-family:Arial;background:#f5f7fb;}
-html {scroll-behavior:smooth;}
+body {
+margin:0;
+font-family:Arial;
+background:#f5f7fb;
+}
 
 /* HEADER */
 .header {
@@ -166,117 +25,120 @@ width:100%;
 background:white;
 text-align:center;
 padding:10px;
-z-index:100;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:100;
 }
-.logo {height:90px;}
+
+.logo {
+height:90px;
+}
 
 /* HERO */
 .hero {
 margin-top:110px;
-background:linear-gradient(rgba(0,60,130,0.75), rgba(0,60,130,0.75)), url('flugzeug.JPG');
+background:linear-gradient(rgba(0,60,130,0.7), rgba(0,60,130,0.7)),
+url('flugzeug.JPG');
 background-size:cover;
-background-position:center;
 color:white;
-padding:120px 20px;
 text-align:center;
+padding:100px 20px;
 }
 
 .hero h1 {
-font-size:45px;
-margin-bottom:10px;
+font-size:40px;
 }
-
-.hero span {color:#d4af37;}
 
 .cta {
 background:#d4af37;
-color:black;
 padding:15px 30px;
-border-radius:12px;
-font-weight:bold;
+border-radius:10px;
+color:black;
 text-decoration:none;
+font-weight:bold;
 display:inline-block;
 margin-top:20px;
 }
 
-/* TRUST */
-.trust {
-display:flex;
-justify-content:center;
-gap:30px;
-padding:20px;
-background:white;
-font-size:14px;
-}
-
-/* RUNDFLUG */
-.section {
-padding:80px 20px;
-text-align:center;
-}
-
+/* GRID */
 .grid {
-max-width:1100px;
-margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:20px;
+padding:40px;
 }
 
-/* BENEFITS */
-.benefits {
-text-align:left;
+/* CARD */
+.card {
 background:white;
-padding:30px;
+padding:25px;
 border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* PREISE */
-.pricing {
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
+/* TITLES */
+h2 {
+color:#0b3d91;
 }
 
-.price-row {
-display:flex;
-justify-content:space-between;
+/* LIST */
+ul {
+padding-left:20px;
+}
+
+/* BUTTON */
+.btn {
+background:#d4af37;
+padding:12px;
+border-radius:8px;
+text-decoration:none;
+color:black;
+display:inline-block;
+margin-top:15px;
+font-weight:bold;
+}
+
+/* FLIGHT BOX */
+.flight-box {
 padding:15px;
 border-bottom:1px solid #eee;
 }
 
-/* REVIEW */
-.review {
+.flight-top {
+display:flex;
+justify-content:space-between;
+font-weight:bold;
+color:#0b3d91;
+}
+
+.bestseller {
+background:#fff7e6;
+border:2px solid #d4af37;
+border-radius:10px;
+}
+
+/* TRUST */
+.trust {
 background:#0b3d91;
 color:white;
-padding:60px 20px;
 text-align:center;
+padding:40px;
 }
 
 /* FORM */
 .form {
-max-width:600px;
+max-width:500px;
 margin:40px auto;
 background:white;
-padding:30px;
+padding:20px;
 border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.1);
-display:flex;
-flex-direction:column;
-gap:15px;
 }
 
-.row {display:flex;gap:10px;}
-.row input {flex:1;}
-
 input, textarea {
-padding:15px;
-border-radius:10px;
-border:1px solid #ddd;
 width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
 }
 
 button {
@@ -285,8 +147,7 @@ color:white;
 padding:15px;
 border:none;
 border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+width:100%;
 }
 
 /* WHATSAPP */
@@ -298,73 +159,16 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-font-size:24px;
 text-decoration:none;
+font-size:22px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
 .grid {grid-template-columns:1fr;}
-.row {flex-direction:column;}
-.hero h1 {font-size:30px;}
-}
-/* GRID BLOCK */
-.grid {
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
+.hero h1 {font-size:28px;}
 }
 
-.card-big {
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-text-align:left;
-}
-
-.card-big h2 {
-color:#0b3d91;
-margin-top:0;
-}
-
-.price {
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-}
-
-.price-row {
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid #eee;
-}
-
-/* Mobile */
-@media(max-width:800px){
-.grid {grid-template-columns:1fr;}
-}
-.price-row {
-display: flex;
-justify-content: space-between;
-padding: 12px 0;
-border-bottom: 1px solid #eee;
-}
-
-.dauer {
-color: #0b3d91;
-font-weight: 700;
-font-size: 18px;
-}
-
-.price-row strong {
-color: #0b3d91;
-font-size: 20px;
-}
 </style>
 </head>
 
@@ -377,98 +181,90 @@ font-size: 20px;
 
 <!-- HERO -->
 <section class="hero">
-<h1>Fliegen ist mehr als ein Traum.<br><span>Es ist dein nächster Schritt.</span></h1>
-<p>Starte deine Ausbildung oder verschenke einen unvergesslichen Rundflug</p>
+<h1>Fliegen ist mehr als ein Traum<br>Es ist dein nächster Schritt</h1>
+<p>Starte deine Pilotenausbildung oder erlebe den Bodensee aus der Luft</p>
 <a href="#kontakt" class="cta">Jetzt Platz sichern</a>
 </section>
 
-<!-- TRUST -->
-<div class="trust">
-<div>⭐️⭐️⭐️⭐️⭐️ 5.0 Bewertung</div>
-<div>✔️ Zertifizierte Flugschule</div>
-<div>📍 Konstanz Bodensee</div>
-</div>
-
-<!-- RUNDFLUG -->
-<section class="section">
-
-
+<!-- GRID -->
 <div class="grid">
 
-<!-- AUSBILDUNG -->
-<div class="card-big">
-
-<h2>Werde Pilot</h2>
-<p>All-Inclusive Ausbildung zum UL-Piloten</p>
+<!-- PILOT -->
+<div class="card">
+<h2>✈️ Werde Pilot</h2>
 
 <ul>
-<li>✈️ 35 Flugstunden</li>
-<li>👨‍✈️ Persönliche Fluglehrer</li>
-<li>📘 Theorie & Prüfung</li>
-<li>📚 Lernmaterial</li>
-<li>🏆 SPL Lizenz</li>
-<li>📍 Konstanz Bodensee</li>
+<li>35 Flugstunden inklusive</li>
+<li>Erfahrene Fluglehrer</li>
+<li>Theorie & Prüfung komplett</li>
+<li>Lernmaterial inklusive</li>
+<li>SPL Lizenz garantiert</li>
+<li>Bodensee & Alpenblick</li>
 </ul>
 
-<p class="price">11.000 € Komplettpaket</p>
+<h3>11.000€ Komplettpaket</h3>
 <p>Start: 18.05.2026</p>
 
-<a href="#kontakt" class="cta">Ausbildung starten</a>
-
+<a href="#kontakt" class="btn">Ausbildung starten</a>
 </div>
 
 <!-- RUNDFLUG -->
-<div class="flight-box bestseller">
-<div class="flight-top">
-<span>⭐ 60 Minuten (BELIEBT)</span>
-<strong>230€</strong>
-</div>
-<p>Rheinfall • Schaffhausen • Europas größter Wasserfall</p>
-<a href="#kontakt" class="mini-cta">Jetzt buchen</a>
-</div>
+<div class="card">
+
+<h2>🎁 Rundflug erleben</h2>
+<p>Das perfekte Geschenk – Emotionen garantiert</p>
 
 <div class="flight-box">
 <div class="flight-top">
 <span>🔥 30 Minuten</span>
 <strong>150€</strong>
 </div>
-<p>Hegau • Vulkanlandschaft • Bodensee</p>
-<a href="#kontakt" class="mini-cta">Jetzt buchen</a>
+<p>Bodensee • Hegau • Vulkanlandschaft</p>
 </div>
 
-<div class="flight-box premium">
+<div class="flight-box bestseller">
+<div class="flight-top">
+<span>⭐ 60 Minuten (BELIEBT)</span>
+<strong>230€</strong>
+</div>
+<p>Rheinfall • Schaffhausen • Wasserfall</p>
+</div>
+
+<div class="flight-box">
 <div class="flight-top">
 <span>🏔 90 Minuten</span>
 <strong>280€</strong>
 </div>
-<p>Alpenblick • Säntis • Panorama pur</p>
-<a href="#kontakt" class="mini-cta">Jetzt buchen</a>
+<p>Alpenblick • Säntis • Panorama</p>
+</div>
+
+<a href="#kontakt" class="btn">Gutschein sichern</a>
+
+</div>
+
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+<h2>„Das beste Erlebnis meines Lebens!“</h2>
+⭐⭐⭐⭐⭐ Kundenbewertung
 </div>
 
 <!-- FORM -->
-<form id="kontakt" class="form" action="https://formspree.io/f/mdaabarw" method="POST">
+<div id="kontakt" class="form">
+<h2>Jetzt starten</h2>
 
-<h2 style="text-align:center;">Jetzt starten</h2>
-
-<div class="row">
+<form action="https://formspree.io/f/mdabarnw" method="POST">
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="E-Mail" required>
-</div>
-
-<textarea name="message" placeholder="Nachricht" required></textarea>
-
-<input type="hidden" name="_subject" value="Neue Anfrage Konair">
-
-<!-- AUTO RESPONSE -->
-<input type="hidden" name="_autoresponse" value="Danke für deine Anfrage! Wir melden uns schnellstmöglich bei dir. ✈️">
-
-<button type="submit">Jetzt Anfrage senden</button>
-
+<textarea name="message" placeholder="Nachricht"></textarea>
+<button type="submit">Anfrage senden</button>
 </form>
+
+</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/41763730578" class="whatsapp">💬</a>
 
 </body>
 </html>
-
