@@ -75,6 +75,62 @@ font-weight:bold;
 }
 
 </style>
+  body{
+font-family:Arial;
+background:#f5f7fa;
+padding:40px;
+}
+
+#voucherForm{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#voucherForm input,
+#voucherForm select{
+padding:15px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:18px;
+}
+
+#voucherForm button{
+padding:18px;
+background:#0b2c5f;
+color:white;
+border:none;
+border-radius:14px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.voucher-preview{
+background:white;
+border:6px solid gold;
+border-radius:20px;
+padding:40px;
+margin-bottom:40px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.voucher-preview h1{
+font-size:52px;
+color:#0b2c5f;
+text-align:center;
+margin-bottom:30px;
+}
+
+.voucher-preview p{
+font-size:24px;
+margin:18px 0;
+}
 
 </head>
 
@@ -169,6 +225,36 @@ flug
 });
 
 </script>
+<div class="voucher-preview" id="voucher">
 
+<h1>GUTSCHEIN</h1>
+
+<p><strong>FÜR:</strong> <span id="previewName"></span></p>
+
+<p><strong>VON:</strong> <span id="previewSender"></span></p>
+
+<p><strong>FLUGDAUER:</strong> <span id="previewFlight"></span></p>
+
+<p><strong>EINLÖSBAR BIS:</strong> 31.12.2026</p>
+
+</div>
+
+<form id="voucherForm">
+
+<input type="text" id="vorname" placeholder="Vorname">
+
+<input type="text" id="nachname" placeholder="Nachname">
+
+<select id="flug">
+<option>30 Minuten</option>
+<option>60 Minuten</option>
+<option>90 Minuten</option>
+</select>
+
+<button type="button" onclick="downloadPDF()">
+Gutschein herunterladen
+</button>
+
+</form>
 </body>
 </html>
