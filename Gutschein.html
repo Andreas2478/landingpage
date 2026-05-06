@@ -6,90 +6,58 @@
 
 <title>Konair Gutschein</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 
 body{
 margin:0;
-padding:40px 20px;
-font-family:Arial,sans-serif;
+font-family:Arial;
 background:#f5f7fa;
-color:#002b5b;
+padding:40px 20px;
 }
 
 .wrapper{
-max-width:1200px;
+max-width:1400px;
 margin:auto;
-}
-
-h1{
-text-align:center;
-font-size:52px;
-margin-bottom:10px;
-color:#002b5b;
-}
-
-.gold{
-color:#d4af37;
-}
-
-.subtitle{
-text-align:center;
-font-size:22px;
-margin-bottom:40px;
-}
-
-.container{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:start;
 }
 
-form{
+.form-box{
 background:white;
-padding:35px;
+padding:40px;
 border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,0.12);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-form h2{
-margin-top:0;
-margin-bottom:25px;
-font-size:28px;
+.form-box h2{
+color:#002b5b;
+margin-bottom:30px;
 }
 
-input,
-select{
+input, select{
 width:100%;
 padding:18px;
 margin-bottom:18px;
 border-radius:14px;
-border:2px solid #e5e5e5;
-font-size:18px;
+border:2px solid #e5d2a0;
+font-size:17px;
 box-sizing:border-box;
-}
-
-input:focus,
-select:focus{
-outline:none;
-border-color:#d4af37;
 }
 
 button{
 width:100%;
 padding:20px;
 border:none;
-border-radius:16px;
-background:#d4af37;
-color:#002b5b;
-font-size:22px;
+border-radius:14px;
+background:#002b5b;
+color:white;
+font-size:20px;
 font-weight:bold;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
@@ -97,78 +65,71 @@ opacity:0.92;
 }
 
 .voucher-preview{
-background:white;
-border:6px solid #d4af37;
-border-radius:28px;
-padding:40px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
 position:relative;
-overflow:hidden;
-min-height:600px;
 }
 
-.voucher-preview:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
+.voucher-preview img{
 width:100%;
-height:14px;
-background:#d4af37;
+border-radius:24px;
+box-shadow:0 15px 40px rgba(0,0,0,0.18);
 }
 
-.logo{
-font-size:24px;
+.preview-name{
+position:absolute;
+top:510px;
+left:120px;
+font-size:30px;
 font-weight:bold;
-color:#002b5b;
-margin-bottom:30px;
+color:#1d2d50;
 }
 
-.voucher-title{
-font-size:58px;
-color:#d4af37;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.voucher-sub{
+.preview-flight{
+position:absolute;
+top:650px;
+left:120px;
 font-size:28px;
-margin-bottom:40px;
+font-weight:bold;
+color:#1d2d50;
 }
 
-.voucher-line{
-font-size:24px;
-margin:25px 0;
-padding-bottom:10px;
-border-bottom:2px solid #ddd;
-}
-
-.footer{
-margin-top:60px;
-text-align:center;
-font-size:18px;
-color:#555;
+.preview-valid{
+position:absolute;
+top:770px;
+left:170px;
+font-size:26px;
+font-weight:bold;
+color:#1d2d50;
 }
 
 .info{
-margin-top:20px;
+margin-top:25px;
 text-align:center;
 font-weight:bold;
-font-size:18px;
+color:#002b5b;
 }
 
 @media(max-width:900px){
 
-.container{
+.wrapper{
 grid-template-columns:1fr;
 }
 
-h1{
-font-size:38px;
+.preview-name{
+top:50%;
+left:18%;
+font-size:20px;
 }
 
-.voucher-title{
-font-size:42px;
+.preview-flight{
+top:63%;
+left:18%;
+font-size:18px;
+}
+
+.preview-valid{
+top:75%;
+left:25%;
+font-size:18px;
 }
 
 }
@@ -180,88 +141,48 @@ font-size:42px;
 
 <div class="wrapper">
 
-<h1>🎁 <span class="gold">Konair</span> Gutschein</h1>
+<div class="form-box">
 
-<p class="subtitle">
-Verschenke ein unvergessliches Rundflug-Erlebnis über Bodensee, Alpen und Rheinfall.
-</p>
+<h2>🎁 Gutschein personalisieren</h2>
 
-<div class="container">
+<input type="text" id="vorname" placeholder="Vorname">
 
-<form id="voucherForm">
+<input type="text" id="nachname" placeholder="Nachname">
 
-<h2>Ihre Angaben</h2>
+<input type="text" id="adresse" placeholder="Adresse">
 
-<input type="text" id="vorname" placeholder="Vorname" required>
+<input type="tel" id="telefon" placeholder="Telefonnummer">
 
-<input type="text" id="nachname" placeholder="Nachname" required>
-
-<input type="text" id="adresse" placeholder="Adresse" required>
-
-<input type="tel" id="telefon" placeholder="Telefonnummer" required>
-
-<input type="email" id="email" placeholder="E-Mail" required>
+<input type="email" id="email" placeholder="E-Mail">
 
 <select id="flug">
-
 <option>30 Minuten Rundflug</option>
-
 <option>60 Minuten Rundflug</option>
-
 <option>90 Minuten Rundflug</option>
-
 </select>
 
-<button type="button" onclick="downloadPDF()">
+<button onclick="downloadPDF()">
 Gutschein herunterladen
 </button>
 
 <div class="info">
 ✅ Sofort Download<br>
 ✅ Kopie per E-Mail<br>
-✅ Premium Rundflug Gutschein
+✅ Premium Geschenk-Gutschein
 </div>
 
-</form>
+</div>
 
 <div class="voucher-preview" id="voucher">
 
-<div class="logo">
-✈️ KONAIR Flugschule & Rundflüge
-</div>
+<img src="gutschein-premium.jpg">
 
-<div class="voucher-title">
-GUTSCHEIN
-</div>
+<div class="preview-name" id="previewName"></div>
 
-<div class="voucher-sub">
-Für einen unvergesslichen Rundflug
-</div>
+<div class="preview-flight" id="previewFlight"></div>
 
-<div class="voucher-line">
-<strong>FÜR:</strong>
-<span id="previewName"></span>
-</div>
-
-<div class="voucher-line">
-<strong>VON:</strong>
-Konair Flüge Bodensee
-</div>
-
-<div class="voucher-line">
-<strong>FLUGDAUER:</strong>
-<span id="previewFlight"></span>
-</div>
-
-<div class="voucher-line">
-<strong>GÜLTIG BIS:</strong>
+<div class="preview-valid">
 31.12.2026
-</div>
-
-<div class="footer">
-Bodensee • Alpen • Rheinfall
-</div>
-
 </div>
 
 </div>
@@ -270,68 +191,41 @@ Bodensee • Alpen • Rheinfall
 
 <script>
 
-document.getElementById("vorname").addEventListener("input", updateVoucher);
-document.getElementById("nachname").addEventListener("input", updateVoucher);
-document.getElementById("flug").addEventListener("change", updateVoucher);
+const { jsPDF } = window.jspdf;
 
-function updateVoucher(){
+function updatePreview(){
 
-const vorname =
-document.getElementById("vorname").value;
+const vorname = document.getElementById("vorname").value;
+const nachname = document.getElementById("nachname").value;
+const flug = document.getElementById("flug").value;
 
-const nachname =
-document.getElementById("nachname").value;
-
-const flug =
-document.getElementById("flug").value;
-
-document.getElementById("previewName").innerText =
+document.getElementById("previewName").innerHTML =
 vorname + " " + nachname;
 
-document.getElementById("previewFlight").innerText =
+document.getElementById("previewFlight").innerHTML =
 flug;
 
 }
 
-async function downloadPDF(){
+document.querySelectorAll("input, select").forEach(el=>{
+el.addEventListener("input", updatePreview);
+});
 
-updateVoucher();
+function downloadPDF(){
 
-const vorname =
-document.getElementById("vorname").value;
+updatePreview();
 
-const nachname =
-document.getElementById("nachname").value;
+const doc = new jsPDF("landscape");
 
-const adresse =
-document.getElementById("adresse").value;
+doc.html(document.getElementById("voucher"), {
 
-const telefon =
-document.getElementById("telefon").value;
+callback:function(doc){
 
-const email =
-document.getElementById("email").value;
+doc.save("Konair-Gutschein.pdf");
 
-const flug =
-document.getElementById("flug").value;
+}
 
-const voucher =
-document.getElementById("voucher");
-
-const canvas =
-await html2canvas(voucher);
-
-const imgData =
-canvas.toDataURL("image/png");
-
-const { jsPDF } = window.jspdf;
-
-const pdf =
-new jsPDF("landscape");
-
-pdf.addImage(imgData,"PNG",10,10,270,150);
-
-pdf.save("Konair-Gutschein.pdf");
+});
 
 fetch("https://formspree.io/f/mdabarnw",{
 
@@ -342,12 +236,19 @@ headers:{
 },
 
 body:JSON.stringify({
-vorname,
-nachname,
-adresse,
-telefon,
-email,
-flug
+
+vorname:document.getElementById("vorname").value,
+
+nachname:document.getElementById("nachname").value,
+
+adresse:document.getElementById("adresse").value,
+
+telefon:document.getElementById("telefon").value,
+
+email:document.getElementById("email").value,
+
+flug:document.getElementById("flug").value
+
 })
 
 });
