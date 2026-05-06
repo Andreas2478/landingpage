@@ -6,13 +6,11 @@
 
 <title>Konair Gutschein</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f5f7fa;
 padding:40px 20px;
 }
@@ -23,7 +21,7 @@ margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-align-items:start;
+align-items:center;
 }
 
 .form-box{
@@ -36,9 +34,11 @@ box-shadow:0 10px 30px rgba(0,0,0,0.08);
 .form-box h2{
 color:#002b5b;
 margin-bottom:30px;
+font-size:32px;
 }
 
-input, select{
+input,
+select{
 width:100%;
 padding:18px;
 margin-bottom:18px;
@@ -48,24 +48,41 @@ font-size:17px;
 box-sizing:border-box;
 }
 
+.button-row{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
 button{
-width:100%;
+flex:1;
 padding:20px;
 border:none;
 border-radius:14px;
 background:#002b5b;
 color:white;
-font-size:20px;
+font-size:18px;
 font-weight:bold;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
 opacity:0.92;
 }
 
-.voucher-preview{
-position:relative;
+.secondary-btn{
+background:white;
+color:#002b5b;
+border:2px solid #d4af37;
+}
+
+.info{
+margin-top:25px;
+text-align:center;
+font-weight:bold;
+color:#002b5b;
+line-height:1.8;
 }
 
 .voucher-preview img{
@@ -74,56 +91,23 @@ border-radius:24px;
 box-shadow:0 15px 40px rgba(0,0,0,0.18);
 }
 
-
-
-.info{
-margin-top:25px;
-text-align:center;
-font-weight:bold;
-color:#002b5b;
-}
-
 @media(max-width:900px){
 
 .wrapper{
 grid-template-columns:1fr;
 }
 
-.preview-name{
-position:absolute;
-top:57%;
-left:59%;
-transform:translate(-50%,-50%);
-font-size:22px;
-font-weight:bold;
-color:#1d2d50;
-width:300px;
+.form-box{
+padding:25px;
+}
+
+.form-box h2{
+font-size:26px;
 text-align:center;
 }
 
-.preview-flight{
-position:absolute;
-top:67%;
-left:59%;
-transform:translate(-50%,-50%);
-font-size:20px;
-font-weight:bold;
-color:#1d2d50;
-width:300px;
-text-align:center;
-}
-
-
-.preview-valid{
-position:absolute;
-top:77%;
-left:59%;
-transform:translate(-50%,-50%);
-font-size:18px;
-font-weight:bold;
-color:#1d2d50;
-width:300px;
-text-align:center;
+.button-row{
+flex-direction:column;
 }
 
 }
@@ -139,117 +123,53 @@ text-align:center;
 
 <h2>🎁 Gutschein personalisieren</h2>
 
-<input type="text" id="vorname" placeholder="Vorname">
+<form action="https://formspree.io/f/mdabarnw" method="POST">
 
-<input type="text" id="nachname" placeholder="Nachname">
+<input type="text" name="vorname" placeholder="Vorname" required>
 
-<input type="text" id="adresse" placeholder="Adresse">
+<input type="text" name="nachname" placeholder="Nachname" required>
 
-<input type="tel" id="telefon" placeholder="Telefonnummer">
+<input type="text" name="adresse" placeholder="Adresse" required>
 
-<input type="email" id="email" placeholder="E-Mail">
+<input type="tel" name="telefon" placeholder="Telefonnummer" required>
 
-<select id="flug">
+<input type="email" name="email" placeholder="E-Mail" required>
+
+<select name="flug">
 <option>30 Minuten Rundflug</option>
 <option>60 Minuten Rundflug</option>
 <option>90 Minuten Rundflug</option>
 </select>
 
-<button onclick="downloadPDF()">
-Gutschein herunterladen
+<div class="button-row">
+
+<button type="submit">
+📨 Anfrage senden
 </button>
+
+<a href="gutschein-premium.jpg" download style="flex:1;">
+<button type="button" class="secondary-btn" style="width:100%;">
+⬇ Gutschein herunterladen
+</button>
+</a>
+
+</div>
+
+</form>
 
 <div class="info">
 ✅ Sofort Download<br>
 ✅ Kopie per E-Mail<br>
-✅ Premium Geschenk-Gutschein
+✅ Premium Rundflug Gutschein
 </div>
 
 </div>
 
-<div class="voucher-preview" id="voucher">
-
+<div class="voucher-preview">
 <img src="gutschein-premium.jpg">
-
-<div class="preview-name" id="previewName"></div>
-
-<div class="preview-flight" id="previewFlight"></div>
-
-<div class="preview-valid">
-31.12.2026
 </div>
 
 </div>
-
-</div>
-
-<script>
-
-const { jsPDF } = window.jspdf;
-
-function updatePreview(){
-
-const vorname = document.getElementById("vorname").value;
-const nachname = document.getElementById("nachname").value;
-const flug = document.getElementById("flug").value;
-
-document.getElementById("previewName").innerHTML =
-vorname + " " + nachname;
-
-document.getElementById("previewFlight").innerHTML =
-flug;
-
-}
-
-document.querySelectorAll("input, select").forEach(el=>{
-el.addEventListener("input", updatePreview);
-});
-
-function downloadPDF(){
-
-updatePreview();
-
-const doc = new jsPDF("landscape");
-
-doc.html(document.getElementById("voucher"), {
-
-callback:function(doc){
-
-doc.save("Konair-Gutschein.pdf");
-
-}
-
-});
-
-fetch("https://formspree.io/f/mdabarnw",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-
-vorname:document.getElementById("vorname").value,
-
-nachname:document.getElementById("nachname").value,
-
-adresse:document.getElementById("adresse").value,
-
-telefon:document.getElementById("telefon").value,
-
-email:document.getElementById("email").value,
-
-flug:document.getElementById("flug").value
-
-})
-
-});
-
-}
-
-</script>
 
 </body>
 </html>
