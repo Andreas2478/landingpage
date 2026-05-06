@@ -1,8 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Konair Gutschein</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(to bottom,#f5f7fa,#eef2f7);
+padding:40px 20px;
+color:#002b5b;
+}
+
+.wrapper{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:24px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+h1{
+text-align:center;
+font-size:42px;
+margin-bottom:10px;
+color:#002b5b;
+}
+
+.gold{
+color:#d4af37;
+}
+
+p{
+text-align:center;
+margin-bottom:30px;
+}
+
+input,select{
+width:100%;
+padding:16px;
+margin-bottom:16px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:14px;
+background:#d4af37;
+color:#002b5b;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.info{
+margin-top:25px;
+text-align:center;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<h1>🎁 <span class="gold">Konair</span> Gutschein</h1>
+
+<p>
+Verschenke ein unvergessliches Rundflug-Erlebnis über Bodensee & Alpen.
+</p>
+
 <form id="voucherForm">
+
 <input type="text" id="vorname" placeholder="Vorname" required>
+
 <input type="text" id="nachname" placeholder="Nachname" required>
+
 <input type="text" id="adresse" placeholder="Adresse" required>
+
 <input type="tel" id="telefon" placeholder="Telefon" required>
+
 <input type="email" id="email" placeholder="E-Mail" required>
 
 <select id="flug">
@@ -12,13 +107,24 @@
 </select>
 
 <button type="submit">
-Gutschein herunterladen
+🎁 Gutschein herunterladen
 </button>
+
 </form>
+
+<div class="info">
+✅ Sofort Download<br>
+✅ Kopie per E-Mail<br>
+✅ Wir melden uns innerhalb 24h
+</div>
+
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-document.getElementById("voucherForm").addEventListener("submit", async function(e) {
+
+document.getElementById("voucherForm").addEventListener("submit", async function(e){
 
 e.preventDefault();
 
@@ -61,5 +167,8 @@ flug
 });
 
 });
+
 </script>
 
+</body>
+</html>
