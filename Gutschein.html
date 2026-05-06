@@ -1,0 +1,65 @@
+<form id="voucherForm">
+<input type="text" id="vorname" placeholder="Vorname" required>
+<input type="text" id="nachname" placeholder="Nachname" required>
+<input type="text" id="adresse" placeholder="Adresse" required>
+<input type="tel" id="telefon" placeholder="Telefon" required>
+<input type="email" id="email" placeholder="E-Mail" required>
+
+<select id="flug">
+<option>30 Minuten Rundflug</option>
+<option>60 Minuten Rundflug</option>
+<option>90 Minuten Rundflug</option>
+</select>
+
+<button type="submit">
+Gutschein herunterladen
+</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+document.getElementById("voucherForm").addEventListener("submit", async function(e) {
+
+e.preventDefault();
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF();
+
+const vorname = document.getElementById("vorname").value;
+const nachname = document.getElementById("nachname").value;
+const adresse = document.getElementById("adresse").value;
+const telefon = document.getElementById("telefon").value;
+const email = document.getElementById("email").value;
+const flug = document.getElementById("flug").value;
+
+doc.setFontSize(28);
+doc.text("KONAIR GUTSCHEIN", 20, 30);
+
+doc.setFontSize(16);
+
+doc.text("Name: " + vorname + " " + nachname, 20, 60);
+doc.text("Adresse: " + adresse, 20, 75);
+doc.text("Telefon: " + telefon, 20, 90);
+doc.text("Rundflug: " + flug, 20, 105);
+
+doc.save("Konair-Gutschein.pdf");
+
+fetch("https://formspree.io/f/mdabarnw", {
+method: "POST",
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify({
+vorname,
+nachname,
+adresse,
+telefon,
+email,
+flug
+})
+});
+
+});
+</script>
+
