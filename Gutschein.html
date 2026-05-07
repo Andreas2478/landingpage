@@ -123,9 +123,7 @@ flex-direction:column;
 
 <h2>🎁 Gutschein personalisieren</h2>
 
-<form action="https://formspree.io/f/mdabarnw" method="POST" data-netlify="true">
-
-<input type="hidden" name="_next" value="https://andreas2478.github.io/landingpage/danke.html">
+<form id="gutscheinForm">
 
 <input type="text" name="vorname" placeholder="Vorname" required>
 
@@ -172,6 +170,25 @@ flex-direction:column;
 </div>
 
 </div>
+<script>
+document.getElementById("gutscheinForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+const form = e.target;
+const data = new FormData(form);
+
+fetch("https://formspree.io/f/mdabarnw", {
+method: "POST",
+body: data,
+headers: {
+"Accept": "application/json"
+}
+}).then(function(){
+window.location.href = "https://andreas2478.github.io/landingpage/danke.html";
+});
+});
+</script>
+
 
 </body>
 </html>
